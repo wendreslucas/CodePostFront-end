@@ -9,4 +9,4 @@ const TextArea = () => {
   return <StyleTextArea></StyleTextArea>
 }
 
-export default StyleTextArea
+export default TextArea

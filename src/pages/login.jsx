@@ -1,7 +1,8 @@
 import React from 'react'
+import Form from '../components/Form'
 
 const Login = () => {
-  return <h1>AQUI ENTRARÁ A TELA DE LOGIN</h1>
+  return <Form />
 }
 
 export default Login
