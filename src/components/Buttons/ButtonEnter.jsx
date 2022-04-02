@@ -1,0 +1,22 @@
+import React from 'react'
+import styled from 'styled-components'
+
+const StyleButton = styled.button`
+background: black;
+color: white;
+font-size: 16px;
+font-weight: 700;
+height: 33px;
+margin-top: 30px;
+margin-left: 364px;
+width: 111px;
+`
+const ButtonEnter = () => {
+  return (
+    <StyleButton>
+      Enter
+    </StyleButton>
+  )
+}
+
+export default ButtonEnter

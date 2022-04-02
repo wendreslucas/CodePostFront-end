@@ -4,10 +4,11 @@ import styled from 'styled-components'
 const InputWrapper = styled.input`
   width: 444px;
   height: 28px;
+  margin-left: 31px;
 `
 
-const Input = () => {
+const InputLogin = () => {
   return <InputWrapper></InputWrapper>
 }
 
-export default Input
+export default InputLogin
