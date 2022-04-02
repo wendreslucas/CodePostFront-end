@@ -7,9 +7,9 @@ import ButtonEnter from '../Buttons/ButtonEnter'
 import TextButton from '../Buttons/TextButton'
  
 const StyleForm = styled.form`
-  width: 500px;
-  height: 220px;
-  border: 1px solid;
+border: 1px solid;
+height: 220px;
+width: 500px;
 `
 const FormLogin = () => {
   function handleSubmit(event) {
