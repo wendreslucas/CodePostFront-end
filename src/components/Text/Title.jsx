@@ -11,7 +11,7 @@ const Title = (props) => {
   return (
  
     <StyleTitle>
-      {props.text}
+      {props.title}
     </StyleTitle>
       
   )

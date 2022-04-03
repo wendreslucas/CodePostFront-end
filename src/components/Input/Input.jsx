@@ -10,15 +10,15 @@ padding: 6px 0 6px 11px;
 width: 444px;
 `
 
-function InputLogin() {
+function Input(props) {
   
   return (
-    <InputWrapper>
-    
+    <InputWrapper placeholder={props.placeholder}>
+      
     </InputWrapper>
   )
 } 
 
 
 
-export default InputLogin
+export default Input

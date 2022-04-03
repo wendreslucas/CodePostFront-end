@@ -17,9 +17,9 @@ const FormLogin = () => {
     }
   return (
     <StyleForm onSubmit={handleSubmit}>
-      <Title text="Welcome to CodeLeap network!"/>
+      <Title title="Welcome to CodeLeap network!"/>
       <Subtitle subtitle="Please enter your username"/>
-      <Input/>
+      <Input placeholder="Username" />
       <Button text="Enter"/>
     </StyleForm>
   )
