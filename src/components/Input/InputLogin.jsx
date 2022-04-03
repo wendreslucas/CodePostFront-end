@@ -10,8 +10,15 @@ padding: 6px 0 6px 11px;
 width: 444px;
 `
 
-const InputLogin = () => {
-  return <InputWrapper placeholder="Username"></InputWrapper>
-}
+function InputLogin() {
+  
+  return (
+    <InputWrapper>
+    
+    </InputWrapper>
+  )
+} 
+
+
 
 export default InputLogin

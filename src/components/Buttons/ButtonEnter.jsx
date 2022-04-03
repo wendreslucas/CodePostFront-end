@@ -13,10 +13,10 @@ margin-top: 30px;
 margin-left: 364px;
 width: 111px;
 `
-const ButtonEnter = () => {
+const ButtonEnter = (props) => {
   return (
     <StyleButton>
-      Enter
+      {props.text}
     </StyleButton>
   )
 }

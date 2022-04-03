@@ -4,7 +4,6 @@ import InputLogin from '../Input/InputLogin'
 import SubtitleLogin from '../Text/SubtitleLogin'
 import TitleLogin from '../Text/TitleLogin'
 import ButtonEnter from '../Buttons/ButtonEnter'
-import TextButton from '../Buttons/TextButton'
  
 const StyleForm = styled.form`
 border: 1px solid;
@@ -21,7 +20,7 @@ const FormLogin = () => {
       <TitleLogin/>
       <SubtitleLogin/>
       <InputLogin/>
-      <ButtonEnter />
+      <ButtonEnter text="Enter"/>
     </StyleForm>
   )
 }
