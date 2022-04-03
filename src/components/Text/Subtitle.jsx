@@ -7,8 +7,8 @@ const StyleSubtitle = styled.h3`
   line-height: 18.75px;
   padding: 0 0  13px 32px ;
 `
-const SubtitleLogin = () => {
-  return <StyleSubtitle>Please enter your username</StyleSubtitle>
+const SubtitleLogin = (props) => {
+  return <StyleSubtitle>{props.subtitle}</StyleSubtitle>
 }
 
 export default SubtitleLogin
