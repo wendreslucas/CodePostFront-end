@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import Label from '../Text/Label'
 import Subtitle from '../Text/Subtitle'
-import Title from '../Text/Title'
 
 const StyleForm = styled.form`
   border: 1px solid;
   height: 349px;
   width: 723px;
+  margin-bottom: 35px;
 `
 const Input = styled.input`
   border-radius: 4px;
@@ -46,7 +47,7 @@ const StyleButton = styled.button`
 `
 
 const FormCreate = () => {
-  const [title, setTitle] = useState()
+  const [subtitle, setSubtitle] = useState()
   const [content, setContent] = useState()
 
   function handleSubmit(event) {
@@ -56,15 +57,15 @@ const FormCreate = () => {
   return (
     <>
       <StyleForm onSubmit={handleSubmit}>
-        <Title title="What’s on your mind?" />
-        <Subtitle subtitle="Title" />
+        <Subtitle subtitle="What’s on your mind?" />
+        <Label label="Title" />
         <Input
-          value={title}
+          value={subtitle}
           type="text"
-          onChange={e => setTitle(e.target.value)}
+          onChange={e => setSubtitle(e.target.value)}
           placeholder="Hello World"
         />
-        <Subtitle subtitle="Content" />
+        <Label label="Content" />
         <StyleTextArea
           value={content}
           type="text"
@@ -72,7 +73,7 @@ const FormCreate = () => {
           placeholder="Content Here"
         />
 
-        <StyleButton disabled={!title || !content}>CREATE</StyleButton>
+        <StyleButton disabled={!subtitle || !content}>CREATE</StyleButton>
       </StyleForm>
     </>
   )

@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import styled from 'styled-components'
-import Subtitle from '../Text/Subtitle'
-import Title from '../Text/Title'
+import Label from '../Text/Label'
+import Title from '../Text/Subtitle'
 
 const StyleForm = styled.div`
   border: 1px solid #777777;
@@ -47,7 +47,7 @@ const FormLogin = () => {
   return (
     <StyleForm>
       <Title title="Welcome to CodeLeap network!" />
-      <Subtitle subtitle="Please enter your username" />
+      <Label label="Please enter your username" />
 
       <StyleInput
         placeholder="Username"

@@ -1,14 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
-import Title from './Text/Title'
+import Subtitle from './Text/Subtitle'
 
 const StyleHeader = styled.div`
-  width: 800px;
+  width: ${props => props.size};
   height: 80px;
   background-color: black;
   display: flex;
   justify-content: start;
-  margin-bottom: 44px;
+  margin-bottom: ${props => props.margin};
   padding-left: 37px;
   align-items: center;
   font-size: 22px;
@@ -17,7 +17,7 @@ const StyleHeader = styled.div`
 `
 
 function Header(props) {
-  return <StyleHeader>{props.title}</StyleHeader>
+  return <StyleHeader size={props.size}>{props.title}</StyleHeader>
 }
 
 export default Header

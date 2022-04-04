@@ -1,15 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const StyleSubtitle = styled.h3`
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 18.75px;
-  padding: 0 0 7px 32px;
-  margin-top: 19px;
+const StyleSubtitle = styled.h2`
+  font-size: 22px;
+  font-weight: 700;
+  padding: 23px 0 0 32px;
 `
-const SubtitleLogin = props => {
+
+const Subtitle = props => {
   return <StyleSubtitle>{props.subtitle}</StyleSubtitle>
 }
 
-export default SubtitleLogin
+export default Subtitle
