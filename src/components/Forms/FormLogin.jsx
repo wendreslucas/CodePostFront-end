@@ -2,10 +2,8 @@ import React, { useState } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import styled from 'styled-components'
-import Input from '../Input/Input'
 import Subtitle from '../Text/Subtitle'
 import Title from '../Text/Title'
-import Button from '../Buttons/Button'
 
 const StyleForm = styled.div`
   border: 1px solid #777777;

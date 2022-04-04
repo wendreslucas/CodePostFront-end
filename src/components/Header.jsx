@@ -8,10 +8,12 @@ const StyleHeader = styled.div`
   background-color: black;
   display: flex;
   justify-content: start;
+  margin-bottom: 44px;
   padding-left: 37px;
   align-items: center;
   font-size: 22px;
   font-weight: 700;
+  color: white;
 `
 
 function Header(props) {
