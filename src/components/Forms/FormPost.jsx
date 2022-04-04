@@ -1,17 +1,14 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import Header from '../Header'
-import Image from 'next/image'
+import Delete from '../icons/delete'
+import Edit from '../icons/edit'
 
 const StyleForm = styled.div`
   border: 1px solid;
   height: 349px;
   width: 723px;
 `
-const Title = styled.h1`
-  background-color: red;
-`
-
 const BackImagem = styled.div`
   background: black;
   display: flex;
@@ -35,8 +32,8 @@ const FormPost = () => {
           title=" My First Post at CodeLeap Network!"
         ></Header>
         <BackImagem>
-          <img src="/delete.svg" alt="delete" />
-          <img src="/edit.svg" alt="edit" />
+          <Delete />
+          <Edit />
         </BackImagem>
       </DivHeader>
     </StyleForm>
