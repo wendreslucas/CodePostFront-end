@@ -11,10 +11,6 @@ const StyleForm = styled.form`
   height: 349px;
   width: 723px;
   margin: 44px 0 44px 0;
-
-  .input {
-    width: 659px;
-  }
 `
 const FormCreate = () => {
   function handleSubmit(event) {
@@ -23,13 +19,13 @@ const FormCreate = () => {
   }
   return (
     <>
-      <StyleForm>
+      <StyleForm onSubmit={handleSubmit}>
         <Title title="What’s on your mind?" />
         <Subtitle subtitle="Title" />
-        <Input className="input" />
+        <Input size="659px" />
         <Subtitle subtitle="Content" />
         <InputContent />
-        <Button />
+        <Button text="CREATE" />
       </StyleForm>
     </>
   )

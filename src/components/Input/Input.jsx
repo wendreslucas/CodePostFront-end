@@ -7,11 +7,16 @@ const InputWrapper = styled.input`
   height: 28px;
   margin-left: 31px;
   padding: 6px 0 6px 11px;
-  width: 444px;
+  width: ${props => props.size};
 `
 
 function Input(props) {
-  return <InputWrapper placeholder={props.placeholder}></InputWrapper>
+  return (
+    <InputWrapper
+      size={props.size}
+      placeholder={props.placeholder}
+    ></InputWrapper>
+  )
 }
 
 export default Input

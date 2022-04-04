@@ -5,9 +5,10 @@ const StyleSubtitle = styled.h3`
   font-size: 16px;
   font-weight: 400;
   line-height: 18.75px;
-  padding: 0 0  13px 32px ;
+  padding: 0 0 13px 32px;
+  margin-top: 19px;
 `
-const SubtitleLogin = (props) => {
+const SubtitleLogin = props => {
   return <StyleSubtitle>{props.subtitle}</StyleSubtitle>
 }
 

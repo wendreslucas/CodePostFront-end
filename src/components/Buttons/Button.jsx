@@ -10,7 +10,7 @@ const StyleButton = styled.button`
   font-weight: 700;
   height: 33px;
   margin-top: 30px;
-  margin-left: 364px;
+  margin-left: 578px;
   width: 111px;
 `
 const Button = props => {

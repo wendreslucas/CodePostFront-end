@@ -7,7 +7,7 @@ import Subtitle from '../Text/Subtitle'
 import Title from '../Text/Title'
 import Button from '../Buttons/Button'
 
-const StyleForm = styled.form`
+const StyleForm = styled.div`
   border: 1px solid #777777;
   height: 220px;
   width: 500px;
@@ -47,12 +47,18 @@ const FormLogin = () => {
   const [name, setName] = useState()
 
   return (
-    <StyleForm onSubmit={handleSubmit}>
+    <StyleForm>
       <Title title="Welcome to CodeLeap network!" />
       <Subtitle subtitle="Please enter your username" />
 
-      <StyleInput onChange={e => setName(e.target.value)} />
-      <StyleButton disabled={!name}>Enter</StyleButton>
+      <StyleInput
+        placeholder="Username"
+        type="text"
+        onChange={e => setName(e.target.value)}
+      />
+      <StyleButton disabled={!name} href="/create">
+        ENTER
+      </StyleButton>
     </StyleForm>
   )
 }
