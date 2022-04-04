@@ -31,7 +31,6 @@ const FormPost = () => {
     <StyleForm>
       <DivHeader>
         <Header
-          margin="44px"
           size=" 723px"
           title=" My First Post at CodeLeap Network!"
         ></Header>

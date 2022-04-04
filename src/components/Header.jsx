@@ -17,7 +17,11 @@ const StyleHeader = styled.div`
 `
 
 function Header(props) {
-  return <StyleHeader size={props.size}>{props.title}</StyleHeader>
+  return (
+    <StyleHeader margin={props.margin} size={props.size}>
+      {props.title}
+    </StyleHeader>
+  )
 }
 
 export default Header

@@ -16,7 +16,7 @@ const StyleCreate = styled.main`
 const Content = () => {
   return (
     <StyleCreate>
-      <Header size="800px" title="CodeLeap Network" />
+      <Header margin="44px" size="800px" title="CodeLeap Network" />
       <FormCreate />
       <FormPost />
     </StyleCreate>
