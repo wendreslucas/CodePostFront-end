@@ -5,7 +5,7 @@ import Header from '../components/Header'
 
 const StyleCreate = styled.main`
   width: 100%;
-  height: auto;
+  height: 500px;
   border: 1px solid #777777;
   display: flex;
   flex-direction: column;

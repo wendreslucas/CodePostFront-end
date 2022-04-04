@@ -8,7 +8,7 @@ const StyleForm = styled.form`
   height: 349px;
   width: 723px;
 `
-const InputWrapper = styled.input`
+const Input = styled.input`
   border-radius: 4px;
   border: 1px solid #777777;
   height: 28px;
@@ -58,13 +58,15 @@ const FormCreate = () => {
       <StyleForm onSubmit={handleSubmit}>
         <Title title="What’s on your mind?" />
         <Subtitle subtitle="Title" />
-        <InputWrapper
+        <Input
+          value={title}
           type="text"
           onChange={e => setTitle(e.target.value)}
           placeholder="Hello World"
         />
         <Subtitle subtitle="Content" />
         <StyleTextArea
+          value={content}
           type="text"
           onChange={e => setContent(e.target.value)}
           placeholder="Content Here"
