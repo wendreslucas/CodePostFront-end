@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import Header from '../Header'
 import Delete from '../icons/delete'
 import Edit from '../icons/edit'
+import Moment from '../Text/moment'
+import User from '../Text/user'
 
 const StyleForm = styled.div`
   border: 1px solid;
@@ -22,6 +24,11 @@ const DivHeader = styled.div`
   flex-direction: row;
   justify-content: space-between;
 `
+const DivInfo = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`
 
 const FormPost = () => {
   return (
@@ -36,6 +43,10 @@ const FormPost = () => {
           <Edit />
         </BackImagem>
       </DivHeader>
+      <DivInfo>
+        <User user="@wendres" />
+        <Moment moment=" 25 minutes ago" />
+      </DivInfo>
     </StyleForm>
   )
 }
