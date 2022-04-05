@@ -16,7 +16,7 @@ const Input = styled.input`
   margin-left: 31px;
   padding: 6px 0 6px 11px;
   /* width: ${props => props.size}; */
-  width: 659px;
+  width: 650px;
 `
 
 const StyleTextArea = styled.textarea`
@@ -25,8 +25,9 @@ const StyleTextArea = styled.textarea`
   margin-left: 31px;
   padding: 6px 0 6px 11px;
   resize: none;
-  width: 659px;
-  height: 74px;
+  width: 650px;
+  height: 55px;
+  font-family: roboto;
 `
 
 const StyleButton = styled.button`
@@ -37,7 +38,7 @@ const StyleButton = styled.button`
   font-size: 16px;
   font-weight: 700;
   height: 33px;
-  margin-top: 35px;
+  margin-top: 25px;
   margin-left: 578px;
   width: 111px;
 
