@@ -5,6 +5,15 @@ import styled from 'styled-components'
 import Label from '../Text/Label'
 import Title from '../Text/Subtitle'
 
+const StyleDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+  width: 100%;
+`
+
 const StyleForm = styled.div`
   border: 1px solid #777777;
   height: 220px;
@@ -45,19 +54,21 @@ const FormLogin = () => {
   const [name, setName] = useState()
 
   return (
-    <StyleForm>
-      <Title title="Welcome to CodeLeap network!" />
-      <Label label="Please enter your username" />
+    <StyleDiv>
+      <StyleForm>
+        <Title title="Welcome to CodeLeap network!" />
+        <Label label="Please enter your username" />
 
-      <StyleInput
-        placeholder="Username"
-        type="text"
-        onChange={e => setName(e.target.value)}
-      />
-      <StyleButton disabled={!name} href="/create">
-        ENTER
-      </StyleButton>
-    </StyleForm>
+        <StyleInput
+          placeholder="Username"
+          type="text"
+          onChange={e => setName(e.target.value)}
+        />
+        <StyleButton disabled={!name} href="/create">
+          ENTER
+        </StyleButton>
+      </StyleForm>
+    </StyleDiv>
   )
 }
 
