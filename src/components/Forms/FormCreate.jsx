@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
+import api from '../../api/posts'
 import Label from '../Text/Label'
 import Subtitle from '../Text/Subtitle'
 
@@ -50,18 +51,20 @@ const StyleButton = styled.button`
 const FormCreate = () => {
   const [subtitle, setSubtitle] = useState()
   const [content, setContent] = useState()
+  const [posts, setPost] = useState([])
 
   function handleSubmit(event) {
     event.preventDefault()
     console.log('Enter')
   }
+
   return (
     <>
       <StyleForm onSubmit={handleSubmit}>
         <Subtitle subtitle="What’s on your mind?" />
         <Label label="Title" />
         <Input
-          value={subtitle}
+          value={posts.title}
           type="text"
           onChange={e => setSubtitle(e.target.value)}
           placeholder="Hello World"

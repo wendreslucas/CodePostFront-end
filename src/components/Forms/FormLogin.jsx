@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { useRouter } from 'next/router'
+import React, { useState, useEffect } from 'react'
+import api from '../../api/posts'
 import Link from 'next/link'
 import styled from 'styled-components'
 import Label from '../Text/Label'
@@ -52,6 +52,7 @@ function handleSubmit(event) {
 
 const FormLogin = () => {
   const [name, setName] = useState()
+  const [post, setPost] = useState('')
 
   return (
     <StyleDiv>
@@ -63,7 +64,8 @@ const FormLogin = () => {
           placeholder="Username"
           type="text"
           onChange={e => setName(e.target.value)}
-        />
+          value={post?.username}
+        ></StyleInput>
         <StyleButton disabled={!name} href="/create">
           ENTER
         </StyleButton>
