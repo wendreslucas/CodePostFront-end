@@ -4,7 +4,11 @@ import styled from 'styled-components'
 import Link from 'next/link'
 
 const ImageContainer = styled.div`
-  display: block;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0 auto;
 `
 const ScreenLogo = () => {

@@ -1,4 +1,4 @@
-import { GlobalStyle } from '../components/globalStyle'
+import { GlobalStyle } from '../components/GlobalStyle'
 
 function MyApp({ Component, pageProps }) {
   return (
