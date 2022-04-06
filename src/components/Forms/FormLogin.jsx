@@ -13,7 +13,6 @@ const StyleDiv = styled.div`
   height: 90vh;
   width: 100%;
 `
-
 const StyleForm = styled.div`
   border: 1px solid #777777;
   height: 220px;
@@ -27,7 +26,6 @@ const StyleInput = styled.input`
   padding: 6px 0 6px 11px;
   width: 444px;
 `
-
 const StyleButton = styled.button`
   background: black;
   border: none;
@@ -45,8 +43,7 @@ const StyleButton = styled.button`
   }
 `
 
-function handleSubmit(event) {
-  event.preventDefault()
+function handleLogin() {
   console.log('Enter')
 }
 
@@ -65,8 +62,8 @@ const FormLogin = () => {
           type="text"
           onChange={e => setName(e.target.value)}
           value={post?.username}
-        ></StyleInput>
-        <StyleButton disabled={!name} href="/create">
+        />
+        <StyleButton onClick={handleLogin} disabled={!name}>
           ENTER
         </StyleButton>
       </StyleForm>
