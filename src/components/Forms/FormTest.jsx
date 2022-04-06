@@ -10,7 +10,7 @@ import User from '../Text/User'
 
 const StyleForm = styled.div`
   border: 1px solid;
-
+  height: 349px;
   width: 723px;
 `
 const BackImagem = styled.div`
@@ -30,18 +30,13 @@ const DivInfo = styled.div`
   flex-direction: row;
   justify-content: space-between;
 `
-const DivTeste = styled.div`
-  padding-bottom: 10px;
 
-  border-bottom: 1px solid;
-`
-
-const FormPost = () => {
-  const [post, setPost] = useState([])
+const FormTest = () => {
+  const [post, setPost] = useState({})
 
   useEffect(() => {
     api
-      .get('/posts')
+      .get('/posts/2')
       .then(response => setPost(response.data))
       .catch(err => {
         console.error('ops! ocorreu um erro' + err)
@@ -52,26 +47,20 @@ const FormPost = () => {
 
   return (
     <StyleForm>
-      {post.map(post => (
-        <DivTeste key={post}>
-          {/* <DivTeste key={post}> */}
-          <DivHeader key={post?.id}>
-            <Header size=" 723px" title={post?.title} />
-            <BackImagem>
-              <Delete />
-              <Edit />
-            </BackImagem>
-          </DivHeader>
-          <DivInfo>
-            <User user={post?.username} />
-            <Moment moment={post?.created_datetime} />
-          </DivInfo>
-          <Text text={post?.content} />
-          {/* </DivTeste> */}
-        </DivTeste>
-      ))}
+      <DivHeader>
+        <Header size=" 723px" title={post?.title} />
+        <BackImagem>
+          <Delete />
+          <Edit />
+        </BackImagem>
+      </DivHeader>
+      <DivInfo>
+        <User user={post?.username} />
+        <Moment moment={post?.created_datetime} />
+      </DivInfo>
+      <Text text={post?.content} />
     </StyleForm>
   )
 }
 
-export default FormPost
+export default FormTest

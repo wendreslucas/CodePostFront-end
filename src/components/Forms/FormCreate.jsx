@@ -52,11 +52,21 @@ const FormCreate = () => {
   const [subtitle, setSubtitle] = useState()
   const [content, setContent] = useState()
   const [posts, setPost] = useState([])
+  const [title, setTitle] = useState()
 
   function handleSubmit(event) {
     event.preventDefault()
     console.log('Enter')
   }
+
+  // useEffect(() => {
+  //   api.post('http://localhost:5000/newpost', {
+  //     username: {},
+  //     created_datetime: Date.now(),
+  //     title: { title },
+  //     content: { content }
+  //   })
+  // })
 
   return (
     <>
@@ -64,7 +74,7 @@ const FormCreate = () => {
         <Subtitle subtitle="What’s on your mind?" />
         <Label label="Title" />
         <Input
-          value={posts.title}
+          value={title}
           type="text"
           onChange={e => setSubtitle(e.target.value)}
           placeholder="Hello World"
