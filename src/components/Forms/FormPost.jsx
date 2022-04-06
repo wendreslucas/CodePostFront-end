@@ -7,6 +7,7 @@ import Edit from '../icons/Edit'
 import Moment from '../Text/Moment'
 import Text from '../Text/TextContent'
 import User from '../Text/User'
+import moment from 'moment'
 
 const StyleForm = styled.div`
   border: 1px solid;
@@ -50,11 +51,18 @@ const FormPost = () => {
 
   if (!post) return <p>... Carregando</p>
 
+  let begin = Date.now()
+
+  function calcTime() {
+    let end = Date.now()
+    let time = end - begin
+    return time
+  }
+
   return (
     <StyleForm>
       {post.map(post => (
         <DivTeste key={post}>
-          {/* <DivTeste key={post}> */}
           <DivHeader key={post?.id}>
             <Header size=" 723px" title={post?.title} />
             <BackImagem>
@@ -64,10 +72,9 @@ const FormPost = () => {
           </DivHeader>
           <DivInfo>
             <User user={post?.username} />
-            <Moment moment={post?.created_datetime} />
+            <Moment moment={moment(post?.created_datetime).fromNow()} />
           </DivInfo>
           <Text text={post?.content} />
-          {/* </DivTeste> */}
         </DivTeste>
       ))}
     </StyleForm>

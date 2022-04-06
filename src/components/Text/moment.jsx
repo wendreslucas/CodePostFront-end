@@ -7,6 +7,7 @@ const StyleMoment = styled.p`
   color: #777777;
   padding-right: 30px;
 `
+
 const Moment = props => {
   return <StyleMoment>{props.moment}</StyleMoment>
 }

@@ -4,6 +4,8 @@ import api from '../../api/posts'
 import Label from '../Text/Label'
 import Subtitle from '../Text/Subtitle'
 
+const baseURL = 'http://localhost:5000/posts'
+
 const StyleForm = styled.form`
   border: 1px solid;
   height: 349px;
@@ -49,24 +51,19 @@ const StyleButton = styled.button`
 `
 
 const FormCreate = () => {
-  const [subtitle, setSubtitle] = useState()
   const [content, setContent] = useState()
-  const [posts, setPost] = useState([])
   const [title, setTitle] = useState()
 
-  function handleSubmit(event) {
-    event.preventDefault()
-    console.log('Enter')
+  function handleSubmit() {
+    api
+      .post(baseURL, {
+        title,
+        content,
+        created_datetime: new Date()
+      })
+      .then(res => console.log('Posting...', res))
+      .catch(err => console.log('Error: ', err))
   }
-
-  // useEffect(() => {
-  //   api.post('http://localhost:5000/newpost', {
-  //     username: {},
-  //     created_datetime: Date.now(),
-  //     title: { title },
-  //     content: { content }
-  //   })
-  // })
 
   return (
     <>
@@ -74,20 +71,22 @@ const FormCreate = () => {
         <Subtitle subtitle="What’s on your mind?" />
         <Label label="Title" />
         <Input
+          name="title"
           value={title}
           type="text"
-          onChange={e => setSubtitle(e.target.value)}
+          onChange={e => setTitle(e.target.value)}
           placeholder="Hello World"
         />
         <Label label="Content" />
         <StyleTextArea
+          name="content"
           value={content}
           type="text"
           onChange={e => setContent(e.target.value)}
           placeholder="Content Here"
         />
 
-        <StyleButton disabled={!subtitle || !content}>CREATE</StyleButton>
+        <StyleButton disabled={!title || !content}>CREATE</StyleButton>
       </StyleForm>
     </>
   )
