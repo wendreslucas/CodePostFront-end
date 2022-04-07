@@ -1,10 +1,31 @@
 import React, { useState, useEffect } from 'react'
-import api from '../../api/posts'
-import Link from 'next/link'
 import styled from 'styled-components'
 import Label from '../Text/Label'
-import Title from '../Text/Subtitle'
+import Subtitle from '../Text/Subtitle'
+import Modal from 'react-modal'
+import Image from 'next/image'
 
+const StyleModal = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+const ImageContainer = styled.div`
+  top: 0;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+`
 const StyleDiv = styled.div`
   display: flex;
   flex-direction: column;
@@ -42,7 +63,6 @@ const StyleButton = styled.button`
     background: #777777;
   }
 `
-
 function handleLogin() {
   console.log('Enter')
 }
@@ -50,24 +70,43 @@ function handleLogin() {
 const FormLogin = () => {
   const [name, setName] = useState()
   const [post, setPost] = useState('')
+  const [openModal, setOpenModal] = useState(false)
 
   return (
-    <StyleDiv>
-      <StyleForm>
-        <Title title="Welcome to CodeLeap network!" />
-        <Label label="Please enter your username" />
+    <>
+      <ImageContainer>
+        <a>
+          <Image
+            onClick={() => setOpenModal(true)}
+            src="/codeleap_logo_black.png"
+            alt="CodeLeap Logo"
+            width="608"
+            height="167"
+          />
+        </a>
 
-        <StyleInput
-          placeholder="Username"
-          type="text"
-          onChange={e => setName(e.target.value)}
-          value={post?.username}
-        />
-        <StyleButton onClick={handleLogin} disabled={!name}>
-          ENTER
-        </StyleButton>
-      </StyleForm>
-    </StyleDiv>
+        <Modal isOpen={openModal} onRequestClose={() => setOpenModal(false)}>
+          <StyleModal>
+            <StyleDiv>
+              <StyleForm>
+                <Subtitle subtitle="Welcome to CodeLeap network!" />
+                <Label margin="13px" label="Please enter your username" />
+
+                <StyleInput
+                  placeholder="Username"
+                  type="text"
+                  onChange={e => setName(e.target.value)}
+                  value={post?.username}
+                />
+                <StyleButton onClick={handleLogin} disabled={!name}>
+                  ENTER
+                </StyleButton>
+              </StyleForm>
+            </StyleDiv>
+          </StyleModal>
+        </Modal>
+      </ImageContainer>
+    </>
   )
 }
 

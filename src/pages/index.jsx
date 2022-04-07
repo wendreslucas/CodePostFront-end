@@ -1,10 +1,11 @@
 import React from 'react'
-import ScreenLogo from '../components/screenLogo'
+
+import FormLogin from '../components/Forms/FormLogin'
 
 const Home = () => {
   return (
     <>
-      <ScreenLogo />
+      <FormLogin />
     </>
   )
 }
