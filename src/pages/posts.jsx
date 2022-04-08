@@ -13,7 +13,7 @@ const StyleCreate = styled.main`
   padding-bottom: 50px;
 `
 
-const Content = () => {
+const Posts = () => {
   return (
     <StyleCreate>
       <Header margin="44px" size="800px" title="CodeLeap Posts" />
@@ -22,4 +22,4 @@ const Content = () => {
   )
 }
 
-export default Content
+export default Posts

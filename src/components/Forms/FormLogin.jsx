@@ -2,18 +2,21 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import Label from '../Text/Label'
 import Subtitle from '../Text/Subtitle'
-import Modal from 'react-modal'
-import Image from 'next/image'
+import Modal from '@mui/material/Modal'
+import { useNavigate } from 'react-router-dom'
+import Box from '@mui/material/Box'
+import Button from '@mui/material/Button'
+import Typography from '@mui/material/Typography'
+import { UserContext } from '../../context/UserContext'
 
 const StyleModal = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: 1px solid #000;
+  box-shadow: 24px;
 `
 const ImageContainer = styled.div`
   top: 0;
@@ -26,15 +29,7 @@ const ImageContainer = styled.div`
   align-items: center;
   cursor: pointer;
 `
-const StyleDiv = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 90vh;
-  width: 100%;
-`
-const StyleForm = styled.div`
+const StyleForm = styled.form`
   border: 1px solid #777777;
   height: 220px;
   width: 500px;
@@ -63,21 +58,21 @@ const StyleButton = styled.button`
     background: #777777;
   }
 `
-function handleLogin() {
-  console.log('Enter')
-}
 
 const FormLogin = () => {
+  const navigate = useNavigate()
+  const { userName, setUserName } = React.useContext(UserContext)
   const [name, setName] = useState()
-  const [post, setPost] = useState('')
-  const [openModal, setOpenModal] = useState(false)
+  const [open, setOpen] = React.useState(false)
+  const handleOpen = () => setOpen(true)
+  const handleClose = () => setOpen(false)
 
   return (
     <>
       <ImageContainer>
         <a>
-          <Image
-            onClick={() => setOpenModal(true)}
+          <img
+            onClick={handleOpen}
             src="/codeleap_logo_black.png"
             alt="CodeLeap Logo"
             width="608"
@@ -85,24 +80,29 @@ const FormLogin = () => {
           />
         </a>
 
-        <Modal isOpen={openModal} onRequestClose={() => setOpenModal(false)}>
+        <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
           <StyleModal>
-            <StyleDiv>
-              <StyleForm>
-                <Subtitle subtitle="Welcome to CodeLeap network!" />
-                <Label margin="13px" label="Please enter your username" />
-
-                <StyleInput
-                  placeholder="Username"
-                  type="text"
-                  onChange={e => setName(e.target.value)}
-                  value={post?.username}
-                />
-                <StyleButton onClick={handleLogin} disabled={!name}>
-                  ENTER
-                </StyleButton>
-              </StyleForm>
-            </StyleDiv>
+            <StyleForm
+              onSubmit={e => {
+                e.preventDefault()
+                setUserName(name)
+                navigate('/create')
+              }}
+            >
+              <Subtitle subtitle="Welcome to CodeLeap network!" />
+              <Label margin="13px" label="Please enter your username" />
+              <StyleInput
+                placeholder="Username"
+                type="text"
+                onChange={e => setName(e.target.value)}
+              />
+              <StyleButton disabled={!name}>ENTER</StyleButton>
+            </StyleForm>
           </StyleModal>
         </Modal>
       </ImageContainer>

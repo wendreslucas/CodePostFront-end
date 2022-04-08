@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useContext, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { UserContext } from '../../context/UserContext'
 import styled from 'styled-components'
 import api from '../../api/posts'
 import Label from '../Text/Label'
@@ -17,11 +19,11 @@ const Input = styled.input`
   border: 1px solid #777777;
   height: 28px;
   margin-left: 31px;
+  margin-bottom: 19px;
   padding: 6px 0 6px 11px;
   /* width: ${props => props.size}; */
   width: 650px;
 `
-
 const StyleTextArea = styled.textarea`
   border-radius: 4px;
   border: 1px solid #777777;
@@ -32,7 +34,6 @@ const StyleTextArea = styled.textarea`
   height: 55px;
   font-family: roboto;
 `
-
 const StyleButton = styled.button`
   background: black;
   border: none;
@@ -42,34 +43,44 @@ const StyleButton = styled.button`
   font-weight: 700;
   height: 33px;
   margin-top: 25px;
-  margin-left: 578px;
+  margin-left: 570px;
   width: 111px;
 
   &:disabled {
     background: #777777;
   }
 `
-
 const FormCreate = () => {
   const [content, setContent] = useState()
   const [title, setTitle] = useState()
+  const navigate = useNavigate()
+  const { userName, setUserName } = useContext(UserContext)
 
   function handleSubmit() {
     api
       .post(baseURL, {
         title,
         content,
+        userName,
         created_datetime: new Date()
       })
-      .then(res => console.log('Posting...', res))
+      .then(res => handleRedirect)
       .catch(err => console.log('Error: ', err))
+  }
+
+  function handleRedirect(res) {
+    if (res.status === 200) {
+      navigate('/')
+    } else {
+      // Something went wrong here
+    }
   }
 
   return (
     <>
-      <StyleForm onSubmit={handleSubmit}>
+      <StyleForm action="/" onSubmit={handleSubmit}>
         <Subtitle subtitle="What’s on your mind?" />
-        <Label label="Title" />
+        <Label bottom="13px" label="Title" />
         <Input
           name="title"
           value={title}
@@ -77,7 +88,7 @@ const FormCreate = () => {
           onChange={e => setTitle(e.target.value)}
           placeholder="Hello World"
         />
-        <Label label="Content" />
+        <Label bottom="7px" label="Content" />
         <StyleTextArea
           name="content"
           value={content}
