@@ -33,8 +33,7 @@ const DivInfo = styled.div`
   justify-content: space-between;
 `
 const DivTeste = styled.div`
-  padding-bottom: 10px;
-  border-bottom: 1px solid;
+  margin-bottom: 40px;
 `
 
 const FormPost = () => {

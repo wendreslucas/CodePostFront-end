@@ -53,7 +53,7 @@ const StyleButton = styled.button`
 const FormCreate = () => {
   const [content, setContent] = useState()
   const [title, setTitle] = useState()
-  const navigate = useNavigate()
+
   const { userName, setUserName } = useContext(UserContext)
 
   function handleSubmit() {
@@ -64,21 +64,13 @@ const FormCreate = () => {
         userName,
         created_datetime: new Date()
       })
-      .then(res => handleRedirect)
+      .then(res => console.log('Deu certo', res))
       .catch(err => console.log('Error: ', err))
-  }
-
-  function handleRedirect(res) {
-    if (res.status === 200) {
-      navigate('/')
-    } else {
-      // Something went wrong here
-    }
   }
 
   return (
     <>
-      <StyleForm action="/" onSubmit={handleSubmit}>
+      <StyleForm action="/posts" onSubmit={handleSubmit}>
         <Subtitle subtitle="What’s on your mind?" />
         <Label bottom="13px" label="Title" />
         <Input

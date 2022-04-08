@@ -6,6 +6,8 @@ const StyleMoment = styled.p`
   font-weight: 400;
   color: #777777;
   padding-right: 30px;
+  margin-top: 23px;
+  margin-bottom: 18px;
 `
 
 const Moment = props => {

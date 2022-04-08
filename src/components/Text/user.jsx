@@ -6,6 +6,8 @@ const StyleUser = styled.p`
   font-weight: 700;
   color: #777777;
   padding-left: 30px;
+  margin-top: 23px;
+  margin-bottom: 18px;
   transition: all 0.3s ease-in-out;
 
   &:hover {
@@ -20,7 +22,7 @@ const StyleAncor = styled.a`
 const User = props => {
   return (
     <StyleAncor>
-      <StyleUser>{props.user}</StyleUser>
+      <StyleUser>@{props.user}</StyleUser>
     </StyleAncor>
   )
 }
