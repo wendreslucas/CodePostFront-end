@@ -1,6 +1,4 @@
 import React, { useContext, useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { UserContext } from '../../context/UserContext'
 import styled from 'styled-components'
 import api from '../../api/posts'
 import Header from '../Header'
@@ -14,6 +12,8 @@ import moment from 'moment'
 const StyleForm = styled.div`
   border: 1px solid;
   width: 723px;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
 `
 const BackImagem = styled.div`
   background: black;
@@ -32,13 +32,9 @@ const DivInfo = styled.div`
   flex-direction: row;
   justify-content: space-between;
 `
-const DivTeste = styled.div`
-  margin-bottom: 40px;
-`
 
 const FormPost = () => {
   const [post, setPost] = useState([])
-  const { userName, setUserName } = useContext(UserContext)
 
   useEffect(() => {
     api
@@ -49,12 +45,10 @@ const FormPost = () => {
       })
   }, [])
 
-  if (!post) return <p>... Carregando</p>
-
   return (
-    <StyleForm>
+    <>
       {post.map(post => (
-        <DivTeste key={post}>
+        <StyleForm>
           <DivHeader key={post?.id}>
             <Header size=" 723px" title={post?.title} />
             <BackImagem>
@@ -62,14 +56,15 @@ const FormPost = () => {
               <Edit />
             </BackImagem>
           </DivHeader>
+
           <DivInfo>
             <User user={post?.userName} />
             <Moment moment={moment(post?.created_datetime).fromNow()} />
           </DivInfo>
           <Text text={post?.content} />
-        </DivTeste>
+        </StyleForm>
       ))}
-    </StyleForm>
+    </>
   )
 }
 

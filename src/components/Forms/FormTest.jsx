@@ -32,19 +32,6 @@ const DivInfo = styled.div`
 `
 
 const FormTest = () => {
-  const [post, setPost] = useState({})
-
-  useEffect(() => {
-    api
-      .get('/posts/2')
-      .then(response => setPost(response.data))
-      .catch(err => {
-        console.error('ops! ocorreu um erro' + err)
-      })
-  }, [])
-
-  if (!post) return <p>... Carregando</p>
-
   return (
     <StyleForm>
       <DivHeader>

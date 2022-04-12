@@ -37,6 +37,12 @@ const BackUser = styled.div`
   height: 80px;
   padding-right: 30px;
 `
+const DivTest = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+`
 
 const Posts = () => {
   const { userName, setUserName } = useContext(UserContext)
