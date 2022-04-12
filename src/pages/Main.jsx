@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { UserContext } from '../context/UserContext'
 import styled from 'styled-components'
-import FormCreate from '../components/Forms/FormCreate'
+import FormMain from '../components/Forms/Main/FormMain'
 import Header from '../components/Header'
 
 const StyleDiv = styled.div`
@@ -13,7 +13,7 @@ const StyleDiv = styled.div`
   justify-content: center;
   /* height: 100vh; */
 `
-const StyleCreate = styled.main`
+const StyleMain = styled.main`
   width: auto;
   /* height: 100vh; */
   border: 1px solid #777777;
@@ -41,11 +41,11 @@ const BackUser = styled.div`
   padding-right: 30px;
 `
 
-const Create = () => {
+const Main = () => {
   const { userName, setUserName } = useContext(UserContext)
   return (
     <StyleDiv>
-      <StyleCreate>
+      <StyleMain>
         <DivHeader>
           <Header margin="44px" size="680px" title="CodeLeap Network"></Header>
           <BackUser>
@@ -53,10 +53,10 @@ const Create = () => {
             <StyleUser>{userName}</StyleUser>
           </BackUser>
         </DivHeader>
-        <FormCreate />
-      </StyleCreate>
+        <FormMain />
+      </StyleMain>
     </StyleDiv>
   )
 }
 
-export default Create
+export default Main
