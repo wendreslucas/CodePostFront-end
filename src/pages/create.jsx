@@ -5,14 +5,17 @@ import FormCreate from '../components/Forms/FormCreate'
 import Header from '../components/Header'
 
 const StyleDiv = styled.div`
+  padding-top: 20px;
+  padding-bottom: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  /* height: 100vh; */
 `
 const StyleCreate = styled.main`
   width: auto;
+  /* height: 100vh; */
   border: 1px solid #777777;
   display: flex;
   flex-direction: column;
