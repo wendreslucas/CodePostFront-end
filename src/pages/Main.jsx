@@ -7,6 +7,10 @@ import Avatar from '@mui/material/Avatar'
 import Chip from '@mui/material/Chip'
 import { StyleMain } from './StyleMain'
 
+const style = {
+  cursor: 'pointer'
+}
+
 const Main = () => {
   const { userName, setUserName } = useContext(UserContext)
   return (
@@ -18,6 +22,7 @@ const Main = () => {
             {' '}
             <p className="StyleUser">
               <Chip
+                sx={style}
                 avatar={
                   <Avatar
                     alt={userName}
