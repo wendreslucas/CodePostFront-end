@@ -1,4 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react'
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import styled from 'styled-components'
 import Modal from '@mui/material/Modal'
 import { useNavigate } from 'react-router-dom'
@@ -17,6 +18,9 @@ import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
+import { HistoryOutlined } from '@mui/icons-material'
+
+const baseURL = 'http://localhost:5000/posts'
 
 const style = {
   position: 'absolute',
@@ -79,7 +83,6 @@ const ModalEdit = styled.div`
     }
   }
 `
-
 const ModalDelete = styled.div`
   border: 1px solid;
   width: 661px;
@@ -87,7 +90,6 @@ const ModalDelete = styled.div`
   padding-bottom: 10px;
   margin-bottom: 30px;
 `
-
 const pointer = {
   cursor: 'pointer',
   color: 'white'
@@ -99,7 +101,6 @@ const DviButtons = styled.div`
   flex-direction: row;
   padding-right: 18px;
 `
-
 const Btn = styled.button`
   border: 1px solid;
   background-color: #fff;
@@ -136,13 +137,10 @@ function FormMain() {
         userName,
         created_datetime: new Date()
       })
-      .then(res => {
-        if (res.status === 200) {
-          console.log('REDICRECTION avec status => ', res.status)
-          window.location.replace = '/'
-        }
-      })
+      .then(res => console.log('Deu certo', res))
       .catch(err => console.log('Error: ', err))
+
+    navigate('/')
   }
 
   useEffect(() => {
@@ -156,7 +154,7 @@ function FormMain() {
 
   return (
     <>
-      <StyleFormCreate action="/" onSubmit={handleSubmit}>
+      <StyleFormCreate onSubmit={handleSubmit}>
         <Modal
           open={openEdit}
           onClose={handleCloseEdit}
@@ -218,6 +216,7 @@ function FormMain() {
         <Label bottom="13px" label="Title" />
         <input
           className="input"
+          autoFocus
           name="title"
           value={title}
           type="text"
@@ -235,12 +234,7 @@ function FormMain() {
           max={50000}
         />
 
-        <button
-          className="button"
-          type="submit"
-          onClick={handleSubmit}
-          disabled={!title || !content}
-        >
+        <button className="button" type="submit" disabled={!title || !content}>
           CREATE
         </button>
       </StyleFormCreate>
