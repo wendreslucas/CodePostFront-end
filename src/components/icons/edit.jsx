@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 const StyleEdit = styled.button`
   cursor: pointer;
+  margin: none;
 `
 const Edit = () => {
   return (
