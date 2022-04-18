@@ -11,13 +11,20 @@ const style = {
   cursor: 'pointer'
 }
 
+const Link = styled.a`
+  text-decoration: none;
+`
+
 const Main = () => {
   const { userName, setUserName } = useContext(UserContext)
   return (
     <StyleMain>
       <div className="DivMain">
         <div className="DivHeader">
-          <Header margin="44px" size="680px" title="CodeLeap Network"></Header>
+          <Link href="/">
+            <Header margin="44px" size="680px" title="CodeLeap Network" />
+          </Link>
+
           <div className="BackUser">
             {' '}
             <p className="StyleUser">

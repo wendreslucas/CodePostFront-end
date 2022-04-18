@@ -13,7 +13,12 @@ const StyleHeader = styled.div`
   align-items: center;
   font-size: 22px;
   font-weight: 700;
+  transition: all 0.3s ease-in-out;
   color: white;
+
+  &:hover {
+    color: #7777;
+  }
 `
 
 function Header(props) {
