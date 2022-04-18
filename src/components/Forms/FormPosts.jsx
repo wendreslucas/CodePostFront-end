@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import api from '../../api/posts'
+import { useNavigate } from 'react-router-dom'
 import Modal from '@mui/material/Modal'
 import moment from 'moment'
 import { StylePosts } from './Main/StyleFormMain'
@@ -105,8 +106,10 @@ const Btn = styled.button`
   margin-right: 16px;
   width: 111px;
 `
+const baseURL = 'http://localhost:5000/posts'
 
 function Posts() {
+  const navigate = useNavigate()
   const [post, setPost] = useState([])
   const [title, setTitle] = useState()
   const [content, setContent] = useState()
@@ -118,6 +121,17 @@ function Posts() {
   const [openDelete, setOpenDelete] = useState(false)
   const handleOpenDelete = () => setOpenDelete(true)
   const handleCloseDelete = () => setOpenDelete(false)
+
+  // function handleDelete() {
+  //   api
+  //     .delete(baseURL.id)
+  //     .then(res => {
+  //       console.log(res)
+  //       handleCloseDelete()
+  //     })
+  //     .catch(err => console.log(err))
+  //   navigate('/main')
+  // }
 
   useEffect(() => {
     api
@@ -181,7 +195,7 @@ function Posts() {
             <DviButtons>
               <Btn onClick={handleCloseDelete}>Cancel</Btn>
 
-              <Btn>OK</Btn>
+              <Btn onClick={handleDelete}>OK</Btn>
             </DviButtons>
           </ModalDelete>
         </Box>
