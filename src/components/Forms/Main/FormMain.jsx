@@ -84,6 +84,7 @@ function FormMain() {
       </StyleFormCreate>
       <Snackbar
         open={open}
+        autoHideDuration={3000}
         onClose={handleClose}
         TransitionComponent={transition}
         message="Post created successfully"
