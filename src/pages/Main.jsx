@@ -12,7 +12,7 @@ const style = {
   color: 'white'
 }
 
-const Link = styled.a`
+const Ancor = styled.a`
   text-decoration: none;
 `
 
@@ -22,9 +22,9 @@ const Main = () => {
     <StyleMain>
       <div className="DivMain">
         <div className="DivHeader">
-          <Link href="/">
+          <Ancor href="/">
             <Header margin="44px" size="680px" title="CodeLeap Network" />
-          </Link>
+          </Ancor>
 
           <div className="BackUser">
             {' '}

@@ -44,6 +44,7 @@ const FormLogin = () => {
               <Subtitle subtitle="Welcome to CodeLeap network!" />
               <Label margin="13px" label="Please enter your username" />
               <input
+                autoFocus
                 className="input"
                 placeholder="Username"
                 type="text"

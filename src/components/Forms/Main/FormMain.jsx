@@ -31,7 +31,7 @@ function FormMain() {
     setOpen(false)
   }
 
-  function handleSubmit(e) {
+  function SetPost(e) {
     e.preventDefault()
     api
       .post(baseURL, {
@@ -50,7 +50,7 @@ function FormMain() {
 
   return (
     <>
-      <StyleFormCreate onSubmit={handleSubmit}>
+      <StyleFormCreate onSubmit={SetPost}>
         <Subtitle subtitle="What’s on your mind?" />
         <Label bottom="13px" label="Title" />
         <input
