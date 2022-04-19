@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
+import { UserContext } from '../../context/UserContext'
 import styled from 'styled-components'
 import api from '../../api/posts'
 import { useNavigate } from 'react-router-dom'
@@ -106,11 +107,10 @@ const Btn = styled.button`
   margin-right: 16px;
   width: 111px;
 `
-const baseURL = 'http://localhost:5000/posts'
 
 function Posts() {
-  const navigate = useNavigate()
-  const [post, setPost] = useState([])
+  const { userName, setUserName } = useContext(UserContext)
+  const [posts, setPosts] = useState([])
   const [title, setTitle] = useState()
   const [content, setContent] = useState()
 
@@ -122,21 +122,17 @@ function Posts() {
   const handleOpenDelete = () => setOpenDelete(true)
   const handleCloseDelete = () => setOpenDelete(false)
 
-  // function handleDelete() {
-  //   api
-  //     .delete(baseURL.id)
-  //     .then(res => {
-  //       console.log(res)
-  //       handleCloseDelete()
-  //     })
-  //     .catch(err => console.log(err))
-  //   navigate('/main')
-  // }
+  function deletePost(id) {
+    api.delete(`/posts/${id}`).then(res => {
+      setPosts(posts.filter(posts => posts.id !== id))
+      handleCloseDelete()
+    })
+  }
 
   useEffect(() => {
     api
       .get('/posts')
-      .then(response => setPost(response.data))
+      .then(response => setPosts(response.data))
       .catch(err => {
         console.error('ops! ocorreu um erro' + err)
       })
@@ -195,17 +191,20 @@ function Posts() {
             <DviButtons>
               <Btn onClick={handleCloseDelete}>Cancel</Btn>
 
-              <Btn onClick={handleDelete}>OK</Btn>
+              <Btn>OK</Btn>
             </DviButtons>
           </ModalDelete>
         </Box>
       </Modal>
-      {post.map(post => (
-        <StylePosts>
-          <div className="DivHeader" key={post?.id}>
-            <Header size=" 723px" title={post?.title} />
+      {posts.map(posts => (
+        <StylePosts key={posts?.id}>
+          <div className="DivHeader" key={posts?.id}>
+            <Header size=" 723px" title={posts?.title} />
             <div className="BackImagem">
-              <DeleteForeverIcon sx={pointer} onClick={handleOpenDelete} />
+              <DeleteForeverIcon
+                sx={pointer}
+                onClick={() => deletePost(posts.id)}
+              />
               <ModeEditOutlineRoundedIcon
                 sx={pointer}
                 onClick={handleOpenEdit}
@@ -214,10 +213,10 @@ function Posts() {
           </div>
 
           <div className="Info">
-            <User user={post?.userName} />
-            <Moment moment={moment(post?.created_datetime).fromNow()} />
+            <User user={posts?.userName} />
+            <Moment moment={moment(posts?.created_datetime).fromNow()} />
           </div>
-          <Text text={post?.content} />
+          <Text text={posts?.content} />
         </StylePosts>
       ))}
     </>

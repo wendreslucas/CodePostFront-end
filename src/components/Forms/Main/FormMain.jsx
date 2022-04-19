@@ -6,17 +6,33 @@ import Label from '../../Text/Label'
 import Subtitle from '../../Text/Subtitle'
 import { StyleFormCreate } from './StyleFormMain'
 import Posts from '../FormPosts'
+import Slide from '@mui/material/Slide'
+import Snackbar from '@mui/material/Snackbar'
 
 const baseURL = 'http://localhost:5000/posts'
 
+function TransitionDown(props) {
+  return <Slide {...props} direction="down" />
+}
+
 function FormMain() {
-  const navigate = useNavigate()
   const { userName, setUserName } = useContext(UserContext)
   const [content, setContent] = useState()
   const [title, setTitle] = useState()
-  const [post, setPost] = useState([])
+  const [open, setOpen] = React.useState(false)
+  const [transition, setTransition] = React.useState(undefined)
 
-  function handleSubmit() {
+  const handleClick = Transition => () => {
+    setTransition(() => Transition)
+    setOpen(true)
+  }
+
+  const handleClose = () => {
+    setOpen(false)
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault()
     api
       .post(baseURL, {
         title,
@@ -27,7 +43,9 @@ function FormMain() {
       .then(res => console.log('Deu certo', res))
       .catch(err => console.log('Error: ', err))
 
-    navigate('/')
+    // navigate('/')
+    setTitle('')
+    setContent('')
   }
 
   return (
@@ -55,10 +73,22 @@ function FormMain() {
           max={50000}
         />
 
-        <button className="button" type="submit" disabled={!title || !content}>
+        <button
+          onClick={handleClick(TransitionDown)}
+          className="button"
+          type="submit"
+          disabled={!title || !content}
+        >
           CREATE
         </button>
       </StyleFormCreate>
+      <Snackbar
+        open={open}
+        onClose={handleClose}
+        TransitionComponent={transition}
+        message="Post created successfully"
+        key={transition ? transition.name : ''}
+      />
       <Posts />
     </>
   )

@@ -8,7 +8,8 @@ import Chip from '@mui/material/Chip'
 import { StyleMain } from './StyleMain'
 
 const style = {
-  cursor: 'pointer'
+  cursor: 'pointer',
+  color: 'white'
 }
 
 const Link = styled.a`
@@ -27,7 +28,7 @@ const Main = () => {
 
           <div className="BackUser">
             {' '}
-            <p className="StyleUser">
+            <div className="StyleUser">
               <Chip
                 sx={style}
                 avatar={
@@ -39,7 +40,7 @@ const Main = () => {
                 label={userName}
                 variant="outlined"
               />
-            </p>
+            </div>
           </div>
         </div>
         <FormMain />
