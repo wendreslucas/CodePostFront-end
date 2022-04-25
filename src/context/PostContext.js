@@ -39,8 +39,8 @@ export function PostContextProvider({ children }) {
           return post
         })
       }
-      mutate(updatedPosts, false)
       setOpenFormModal(false)
+      mutate(updatedPosts, false)
     } else {
       api.post('posts', post)
 
