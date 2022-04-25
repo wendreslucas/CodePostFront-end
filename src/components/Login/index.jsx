@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import Label from '../../Text/Label'
-import Subtitle from '../../Text/Subtitle'
+import Label from '../Text/Label'
+import Subtitle from '../Text/Subtitle'
 import Modal from '@mui/material/Modal'
 import { useNavigate } from 'react-router-dom'
-import { UserContext } from '../../../context/UserContext'
-import { StyleForm, StyleImage, StyleModal } from './StyleLogin'
+import { UserContext } from '../../context/UserContext'
+import { StyleForm, StyleImage, StyleModal } from './style.js'
 
 const FormLogin = () => {
   const navigate = useNavigate()

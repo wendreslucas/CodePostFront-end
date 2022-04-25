@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
-import FormPost from '../components/Forms/FormPost'
+import AddPost from '../components/AddPost'
+
 import Header from '../components/Header'
 import { UserContext } from '../context/UserContext'
 
@@ -56,7 +57,7 @@ const Posts = () => {
             <StyleUser>{userName}</StyleUser>
           </BackUser>
         </DivHeader>
-        <FormPost />
+        <AddPost />
       </StylePosts>
     </StyleDiv>
   )

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { UserContext } from '../context/UserContext'
 import styled from 'styled-components'
-import FormMain from '../components/Forms/Main/FormMain'
+import AddPost from '../components/AddPost'
 import Header from '../components/Header'
 import Avatar from '@mui/material/Avatar'
 import Chip from '@mui/material/Chip'
@@ -43,7 +43,7 @@ const Main = () => {
             </div>
           </div>
         </div>
-        <FormMain />
+        <AddPost />
       </div>
     </StyleMain>
   )

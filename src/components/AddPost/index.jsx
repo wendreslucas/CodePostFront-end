@@ -1,24 +1,20 @@
-import React, { useContext, useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { UserContext } from '../../../context/UserContext'
-import api from '../../../api/posts'
-import Label from '../../Text/Label'
-import Subtitle from '../../Text/Subtitle'
-import { StyleFormCreate } from './StyleFormMain'
-import Posts from '../FormPosts'
+import React, { useContext, useState } from 'react'
+import { PostContext } from '../../context/PostContext'
+import Label from '../Text/Label'
+import Subtitle from '../Text/Subtitle'
+import { StyleFormCreate } from './style.js'
+import Posts from '../PostList'
 import Slide from '@mui/material/Slide'
 import Snackbar from '@mui/material/Snackbar'
-
-const baseURL = 'http://localhost:5000/posts'
 
 function TransitionDown(props) {
   return <Slide {...props} direction="down" />
 }
 
-function FormMain() {
-  const { userName, setUserName } = useContext(UserContext)
-  const [content, setContent] = useState()
-  const [title, setTitle] = useState()
+function AddPost() {
+  const { title, content, handleTitle, handleContent, handleSubmit } =
+    useContext(PostContext)
+
   const [open, setOpen] = React.useState(false)
   const [transition, setTransition] = React.useState(undefined)
 
@@ -26,31 +22,13 @@ function FormMain() {
     setTransition(() => Transition)
     setOpen(true)
   }
-
   const handleClose = () => {
     setOpen(false)
   }
 
-  function SetPost(e) {
-    e.preventDefault()
-    api
-      .post(baseURL, {
-        title,
-        content,
-        userName,
-        created_datetime: new Date()
-      })
-      .then(res => console.log('Deu certo', res))
-      .catch(err => console.log('Error: ', err))
-
-    // navigate('/')
-    setTitle('')
-    setContent('')
-  }
-
   return (
     <>
-      <StyleFormCreate onSubmit={SetPost}>
+      <StyleFormCreate onSubmit={handleSubmit}>
         <Subtitle subtitle="What’s on your mind?" />
         <Label bottom="13px" label="Title" />
         <input
@@ -59,8 +37,8 @@ function FormMain() {
           name="title"
           value={title}
           type="text"
-          onChange={e => setTitle(e.target.value)}
-          placeholder="Hello World"
+          onChange={handleTitle}
+          placeholder="Title Here"
         />
         <Label bottom="7px" label="Content" />
         <textarea
@@ -68,7 +46,7 @@ function FormMain() {
           name="content"
           value={content}
           type="text"
-          onChange={e => setContent(e.target.value)}
+          onChange={handleContent}
           placeholder="Content Here"
           max={50000}
         />
@@ -81,6 +59,7 @@ function FormMain() {
         >
           CREATE
         </button>
+        {/* <button onClick={handleEditPost}>EDIT</button> */}
       </StyleFormCreate>
       <Snackbar
         open={open}
@@ -95,4 +74,4 @@ function FormMain() {
   )
 }
 
-export default FormMain
+export default AddPost

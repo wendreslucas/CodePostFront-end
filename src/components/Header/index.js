@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Subtitle from './Text/Subtitle'
+import Subtitle from '../Text/Subtitle'
 
 const StyleHeader = styled.div`
   width: ${props => props.size};
