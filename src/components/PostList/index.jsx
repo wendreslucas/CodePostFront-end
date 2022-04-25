@@ -5,7 +5,6 @@ import styled from 'styled-components'
 
 function PostList() {
   const { data } = useAxios('posts')
-  console.log(data)
 
   const DivMap = styled.div`
     display: flex;

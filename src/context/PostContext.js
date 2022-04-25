@@ -35,7 +35,6 @@ export function PostContextProvider({ children }) {
               content
             }
           }
-
           return post
         })
       }

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import { PostContext } from '../../context/PostContext'
 import Label from '../Text/Label'
 import Subtitle from '../Text/Subtitle'

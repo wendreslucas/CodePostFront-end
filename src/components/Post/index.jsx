@@ -33,10 +33,8 @@ function Post({ id, title, content, username, created_datetime }) {
       </div>
       <div className="Info">
         <User user={username} />
-
         <Moment moment={moment(created_datetime).fromNow()} />
       </div>
-
       <Text text={content} />
     </StylePosts>
   )
