@@ -1,10 +1,10 @@
-import React, { useContext } from 'react'
-import { UserContext } from '../../context/UserContext'
+import React from 'react'
 import { useAxios } from '../../hooks/useAxios'
 import Post from '../Post'
 
 function PostList() {
   const { data } = useAxios('posts')
+  console.log(data)
 
   return (
     <>
@@ -14,7 +14,7 @@ function PostList() {
           id={post._id}
           title={post.title}
           content={post.content}
-          username={post}
+          username={post.userName}
           created_datetime={post.created_datetime}
         />
       ))}

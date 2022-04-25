@@ -13,7 +13,7 @@ module.exports = {
   },
 
   async store(request, response) {
-    const { title, content, autor } = request.body
+    const { title, content, userName } = request.body
 
     if (!title || !content) {
       return response
@@ -25,7 +25,7 @@ module.exports = {
       _id: uuid(),
       title,
       content,
-      autor,
+      userName,
       created_datetime: new Date()
     })
 

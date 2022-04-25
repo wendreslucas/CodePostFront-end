@@ -1,6 +1,5 @@
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import { PostContext } from '../../context/PostContext'
-import { UserContext } from '../../context/UserContext'
 import Header from '../Header'
 import { StylePosts } from './style.js'
 import User from '../Text/User'
@@ -15,9 +14,9 @@ const pointer = {
   color: 'white'
 }
 
-function Post({ id, title, content, autor, created_datetime }) {
-  const { userName } = useContext(UserContext)
+function Post({ id, title, content, username, created_datetime }) {
   const { handleEdit, handleDelete } = useContext(PostContext)
+
   return (
     <StylePosts key={id}>
       <div className="DivHeader" key={id}>
@@ -33,7 +32,8 @@ function Post({ id, title, content, autor, created_datetime }) {
         </div>
       </div>
       <div className="Info">
-        <User user={userName} />
+        <User user={username} />
+
         <Moment moment={moment(created_datetime).fromNow()} />
       </div>
 

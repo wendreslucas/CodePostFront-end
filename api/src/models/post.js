@@ -13,7 +13,7 @@ const postSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  autor: {
+  userName: {
     type: String,
     required: false
   },
