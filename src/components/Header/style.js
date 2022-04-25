@@ -1,8 +1,6 @@
-import React from 'react'
 import styled from 'styled-components'
-import Subtitle from '../Text/Subtitle'
 
-const StyleHeader = styled.div`
+export const StyleHeader = styled.div`
   width: ${props => props.size};
   height: 80px;
   background-color: black;
@@ -20,13 +18,3 @@ const StyleHeader = styled.div`
     color: #7777;
   }
 `
-
-function Header(props) {
-  return (
-    <StyleHeader margin={props.margin} size={props.size}>
-      {props.title}
-    </StyleHeader>
-  )
-}
-
-export default Header

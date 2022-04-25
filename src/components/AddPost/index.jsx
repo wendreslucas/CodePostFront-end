@@ -59,7 +59,6 @@ function AddPost() {
         >
           CREATE
         </button>
-        {/* <button onClick={handleEditPost}>EDIT</button> */}
       </StyleFormCreate>
       <Snackbar
         open={open}
