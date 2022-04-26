@@ -8,6 +8,7 @@ import Text from '../../components/Text/TextContent'
 import moment from 'moment'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import ModeEditOutlineRoundedIcon from '@mui/icons-material/ModeEditOutlineRounded'
+import Zoom from '@mui/material/Zoom'
 
 const pointer = {
   cursor: 'pointer',
@@ -16,6 +17,7 @@ const pointer = {
 
 function Post({ id, title, content, username, created_datetime }) {
   const { handleEdit, handleDelete } = useContext(PostContext)
+  const [checked, setChecked] = React.useState(false)
 
   return (
     <StylePosts key={id}>

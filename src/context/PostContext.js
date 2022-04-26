@@ -4,10 +4,12 @@ import ModalEdit from '../components/ModalEdit'
 import ModalDelete from '../components/ModalDelete'
 import { useAxios } from '../hooks/useAxios'
 import api from '../services/api'
+import { useNavigate } from 'react-router-dom'
 
 export const PostContext = createContext()
 
 export function PostContextProvider({ children }) {
+  const navigate = useNavigate()
   const { data, mutate } = useAxios('posts')
   const { userName, setUserName } = useContext(UserContext)
 
@@ -67,6 +69,9 @@ export function PostContextProvider({ children }) {
     const updatedPosts = {
       posts: data.posts?.filter(post => post._id !== id)
     }
+
+    navigate.push('/')
+    console.log('passou')
     mutate(updatedPosts, false)
   }
 
