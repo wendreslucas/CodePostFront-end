@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { PostContext } from '../../context/PostContext'
-import Header from '../Header'
+import HeaderPost from '../HeaderPost/index'
 import { StylePosts } from './style.js'
 import User from '../Text/User'
 import Moment from '../Text/Moment'
@@ -20,7 +20,7 @@ function Post({ id, title, content, username, created_datetime }) {
   return (
     <StylePosts key={id}>
       <div className="DivHeader" key={id}>
-        <Header size=" 723px" title={title} />
+        <HeaderPost size=" 723px" title={title} />
         <div className="BackImagem">
           <DeleteForeverIcon sx={pointer} onClick={() => handleDelete(id)} />
           <ModeEditOutlineRoundedIcon
