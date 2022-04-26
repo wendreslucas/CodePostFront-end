@@ -22,10 +22,8 @@ export function PostContextProvider({ children }) {
       content,
       userName
     }
-
     if (id) {
       api.put(`posts/${id}`, post)
-
       const updatedPosts = {
         posts: data.posts?.map(post => {
           if (post._id === id) {
@@ -38,7 +36,7 @@ export function PostContextProvider({ children }) {
           return post
         })
       }
-      setOpenFormModal(false)
+      setInterval(handleClose, 1000)
       mutate(updatedPosts, false)
     } else {
       api.post('posts', post)

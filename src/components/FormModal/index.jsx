@@ -10,8 +10,24 @@ import {
   Header,
   FormContainer
 } from './style.js'
+import Slide from '@mui/material/Slide'
+import Snackbar from '@mui/material/Snackbar'
+
+function TransitionDown(props) {
+  return <Slide {...props} direction="down" />
+}
 
 export default function FormModal() {
+  const [open, setOpen] = React.useState(false)
+  const [transition, setTransition] = React.useState(undefined)
+
+  const handleClick = Transition => () => {
+    setTransition(() => Transition)
+    setOpen(true)
+  }
+  const handleCloseSnack = () => {
+    setOpen(false)
+  }
   const {
     handleClose,
     title,
@@ -51,12 +67,19 @@ export default function FormModal() {
             <button
               className="button"
               type="submit"
-              // onClick=
-              // disabled={!title || !content}
+              onClick={handleClick(TransitionDown)}
             >
               SAVE
             </button>
           </FormContainer>
+          <Snackbar
+            open={open}
+            autoHideDuration={3000}
+            onClose={handleCloseSnack}
+            TransitionComponent={transition}
+            message="Post updated successfully"
+            key={transition ? transition.name : ''}
+          />
         </ModalEdit>
       </Container>
     </Overlay>
