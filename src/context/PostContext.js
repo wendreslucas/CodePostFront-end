@@ -1,6 +1,7 @@
 import { createContext, useState, useContext } from 'react'
 import { UserContext } from './UserContext'
 import FormModal from '../components/FormModal'
+import ModalDelete from '../components/ModalDelete'
 import { useAxios } from '../hooks/useAxios'
 import api from '../services/api'
 
@@ -11,6 +12,8 @@ export function PostContextProvider({ children }) {
   const { userName, setUserName } = useContext(UserContext)
 
   const [openFormModal, setOpenFormModal] = useState(false)
+  const [openModalDelete, setOpenModalDelete] = useState(false)
+
   const [title, setTitle] = useState('')
   const [content, setContent] = useState('')
   const [id, setId] = useState(false)
@@ -64,6 +67,7 @@ export function PostContextProvider({ children }) {
   }
 
   function handleDelete(id) {
+    setOpenModalDelete(true)
     api.delete(`posts/${id}`)
 
     const updatedPosts = {
@@ -71,6 +75,14 @@ export function PostContextProvider({ children }) {
     }
 
     mutate(updatedPosts, false)
+  }
+
+  function OpenDelete() {
+    setOpenModalDelete(true)
+  }
+
+  function CloseDelete() {
+    setOpenModalDelete(false)
   }
 
   function handleClose() {
@@ -100,6 +112,8 @@ export function PostContextProvider({ children }) {
         handleEdit,
         handleSubmit,
         handleDelete,
+        OpenDelete,
+        CloseDelete,
         title,
         setTitle,
         content,
@@ -110,6 +124,7 @@ export function PostContextProvider({ children }) {
     >
       {children}
       {openFormModal && <FormModal />}
+      {openModalDelete && <ModalDelete />}
     </PostContext.Provider>
   )
 }
