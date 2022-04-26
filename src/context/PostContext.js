@@ -1,6 +1,6 @@
 import { createContext, useState, useContext } from 'react'
 import { UserContext } from './UserContext'
-import FormModal from '../components/FormModal'
+import ModalEdit from '../components/ModalEdit'
 import ModalDelete from '../components/ModalDelete'
 import { useAxios } from '../hooks/useAxios'
 import api from '../services/api'
@@ -11,7 +11,7 @@ export function PostContextProvider({ children }) {
   const { data, mutate } = useAxios('posts')
   const { userName, setUserName } = useContext(UserContext)
 
-  const [openFormModal, setOpenFormModal] = useState(false)
+  const [openModalEdit, setOpenModalEdit] = useState(false)
   const [openModalDelete, setOpenModalDelete] = useState(false)
 
   const [title, setTitle] = useState('')
@@ -40,6 +40,7 @@ export function PostContextProvider({ children }) {
         })
       }
       setInterval(handleClose, 1000)
+
       mutate(updatedPosts, false)
     } else {
       api.post('posts', post)
@@ -47,6 +48,7 @@ export function PostContextProvider({ children }) {
       const updatedPosts = {
         posts: [...data.posts, post]
       }
+
       mutate(updatedPosts, false)
     }
 
@@ -58,14 +60,6 @@ export function PostContextProvider({ children }) {
     }
   }
 
-  function handleEdit(postId, postTitle, postContent) {
-    setTitle(postTitle)
-    setContent(postContent)
-    setId(postId)
-
-    setOpenFormModal(true)
-  }
-
   function handleDelete(id) {
     setOpenModalDelete(true)
     api.delete(`posts/${id}`)
@@ -73,8 +67,15 @@ export function PostContextProvider({ children }) {
     const updatedPosts = {
       posts: data.posts?.filter(post => post._id !== id)
     }
-
     mutate(updatedPosts, false)
+  }
+
+  function handleEdit(postId, postTitle, postContent) {
+    setTitle(postTitle)
+    setContent(postContent)
+    setId(postId)
+
+    setOpenModalEdit(true)
   }
 
   function OpenDelete() {
@@ -92,7 +93,7 @@ export function PostContextProvider({ children }) {
     if (content) {
       setContent('')
     }
-    setOpenFormModal(false)
+    setOpenModalEdit(false)
   }
 
   function handleTitle(e) {
@@ -123,7 +124,7 @@ export function PostContextProvider({ children }) {
       }}
     >
       {children}
-      {openFormModal && <FormModal />}
+      {openModalEdit && <ModalEdit />}
       {openModalDelete && <ModalDelete />}
     </PostContext.Provider>
   )

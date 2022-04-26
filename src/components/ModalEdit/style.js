@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const ModalEdit = styled.div`
+export const ModEdit = styled.div`
   border: 1px solid;
   width: 723px;
   padding-bottom: 10px;

@@ -9,11 +9,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/main" element={<Main />} />
-        {/* <Route path="/posts" element={<Posts />} /> */}
-        <Route
-          path="/edit"
-          render={props => <EditPost {...props} updatePost={updatePost} />}
-        />
       </Routes>
     </BrowserRouter>
   )

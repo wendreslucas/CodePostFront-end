@@ -1,15 +1,10 @@
 import React, { useContext } from 'react'
 import { PostContext } from '../../context/PostContext'
-import Label from '../../components/Text/Label'
-import Subtitle from '../../components/Text/Subtitle'
+import { UserContext } from '../../context/UserContext'
+import Label from '../Text/Label'
+import Subtitle from '../Text/Subtitle'
 import { IoClose } from 'react-icons/io5'
-import {
-  ModalEdit,
-  Overlay,
-  Container,
-  Header,
-  FormContainer
-} from './style.js'
+import { ModEdit, Overlay, Container, Header, FormContainer } from './style.js'
 import Slide from '@mui/material/Slide'
 import Snackbar from '@mui/material/Snackbar'
 
@@ -17,7 +12,17 @@ function TransitionDown(props) {
   return <Slide {...props} direction="down" />
 }
 
-export default function FormModal() {
+export default function ModalEdit() {
+  const { userName } = useContext(UserContext)
+  const {
+    handleClose,
+    title,
+    handleTitle,
+    content,
+    handleContent,
+    handleSubmit
+  } = useContext(PostContext)
+
   const [open, setOpen] = React.useState(false)
   const [transition, setTransition] = React.useState(undefined)
 
@@ -28,18 +33,11 @@ export default function FormModal() {
   const handleCloseSnack = () => {
     setOpen(false)
   }
-  const {
-    handleClose,
-    title,
-    handleTitle,
-    content,
-    handleContent,
-    handleSubmit
-  } = useContext(PostContext)
+
   return (
     <Overlay>
       <Container>
-        <ModalEdit>
+        <ModEdit>
           <Header>
             <Subtitle subtitle="Edit" />
             <button onClick={handleClose}>
@@ -74,13 +72,13 @@ export default function FormModal() {
           </FormContainer>
           <Snackbar
             open={open}
-            autoHideDuration={3000}
+            autoHideDuration={2000}
             onClose={handleCloseSnack}
             TransitionComponent={transition}
             message="Post updated successfully"
             key={transition ? transition.name : ''}
           />
-        </ModalEdit>
+        </ModEdit>
       </Container>
     </Overlay>
   )

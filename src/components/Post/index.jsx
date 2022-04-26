@@ -22,11 +22,7 @@ function Post({ id, title, content, username, created_datetime }) {
       <div className="DivHeader" key={id}>
         <Header size=" 723px" title={title} />
         <div className="BackImagem">
-          <DeleteForeverIcon
-            sx={pointer}
-            //onClick={OpenDelete}
-            onClick={() => handleDelete(id)}
-          />
+          <DeleteForeverIcon sx={pointer} onClick={() => handleDelete(id)} />
           <ModeEditOutlineRoundedIcon
             sx={pointer}
             onClick={() => {
