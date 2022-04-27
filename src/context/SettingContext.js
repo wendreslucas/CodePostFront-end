@@ -8,6 +8,12 @@ export function SettingContextProvider({ children }) {
   const navigate = useNavigate()
   const { userName, setUserName } = useContext(UserContext)
   const [openMenuUser, setOpenMenuUser] = useState(false)
+  const [openNav, setOpenNav] = useState(false)
+
+  function handleNovoPost() {
+    setOpenNav(false)
+    navigate('/main')
+  }
 
   function handleLogout() {
     setOpenMenuUser(false)
@@ -22,6 +28,7 @@ export function SettingContextProvider({ children }) {
   return (
     <SettingContext.Provider
       value={{
+        handleNovoPost,
         handleLogout,
         handleProfile
       }}

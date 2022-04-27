@@ -39,7 +39,8 @@ const settings = ['Perfil', 'Sair']
 const Header = () => {
   const classes = useStyles()
   const { userName } = useContext(UserContext)
-  const { handleLogout, handleProfile } = useContext(SettingContext)
+  const { handleNovoPost, handleLogout, handleProfile } =
+    useContext(SettingContext)
 
   const [anchorElNav, setAnchorElNav] = React.useState(null)
   const [anchorElUser, setAnchorElUser] = React.useState(null)
@@ -108,11 +109,15 @@ const Header = () => {
                 display: { xs: 'block', md: 'none' }
               }}
             >
-              {pages.map(page => (
-                <MenuItem onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
+              <MenuItem onClick={handleNovoPost}>
+                <Typography textAlign="center">Novo</Typography>
+              </MenuItem>
+              <MenuItem onClick={handleCloseNavMenu}>
+                <Typography textAlign="center">Posts</Typography>
+              </MenuItem>
+              <MenuItem onClick={handleCloseNavMenu}>
+                <Typography textAlign="center">Home</Typography>
+              </MenuItem>
             </Menu>
           </Box>
           <Typography
@@ -131,15 +136,24 @@ const Header = () => {
             </Ancor>
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map(page => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {page}
-              </Button>
-            ))}
+            <Button
+              onClick={handleNovoPost}
+              sx={{ my: 2, color: 'white', display: 'block' }}
+            >
+              NOVO
+            </Button>
+            <Button
+              onClick={handleCloseNavMenu}
+              sx={{ my: 2, color: 'white', display: 'block' }}
+            >
+              POSTS
+            </Button>
+            <Button
+              onClick={handleCloseNavMenu}
+              sx={{ my: 2, color: 'white', display: 'block' }}
+            >
+              HOME
+            </Button>
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>

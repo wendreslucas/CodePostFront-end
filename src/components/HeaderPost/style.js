@@ -13,8 +13,4 @@ export const StyleHeader = styled.div`
   font-weight: 700;
   transition: all 0.3s ease-in-out;
   color: white;
-
-  &:hover {
-    color: #7777;
-  }
 `

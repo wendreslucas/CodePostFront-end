@@ -42,6 +42,7 @@ export function PostContextProvider({ children }) {
         })
       }
       setInterval(handleClose, 1000)
+      navigate('/')
 
       mutate(updatedPosts, false)
     } else {

@@ -1,9 +1,9 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import AddPost from '../components/AddPost'
-
 import Header from '../components/Header'
-import { UserContext } from '../context/UserContext'
+import PostList from '../components/PostList'
+
+import HeaderPost from '../components/HeaderPost'
 
 const StyleDiv = styled.div`
   display: flex;
@@ -17,49 +17,20 @@ const StylePosts = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 40px;
-`
-const StyleUser = styled.p`
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-`
-const DivHeader = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-`
-const BackUser = styled.div`
-  background: black;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 100px;
-  height: 80px;
-  padding-right: 30px;
-`
-const DivTest = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+  margin-top: 40px;
 `
 
 const Posts = () => {
-  const { userName, setUserName } = useContext(UserContext)
   return (
-    <StyleDiv>
-      <StylePosts>
-        <DivHeader>
-          <Header margin="44px" size="680px" title="CodeLeap Posts"></Header>
-          <BackUser>
-            {' '}
-            <StyleUser>{userName}</StyleUser>
-          </BackUser>
-        </DivHeader>
-        <AddPost />
-      </StylePosts>
-    </StyleDiv>
+    <>
+      <Header />
+      <StyleDiv>
+        <StylePosts>
+          <HeaderPost margin="44px" size="823px" title="CodeLeap Posts" />
+          <PostList />
+        </StylePosts>
+      </StyleDiv>
+    </>
   )
 }
 
