@@ -12,14 +12,34 @@ import Button from '@mui/material/Button'
 import Tooltip from '@mui/material/Tooltip'
 import MenuItem from '@mui/material/MenuItem'
 import { UserContext } from '../../context/UserContext'
+import styled from 'styled-components'
+import { makeStyles } from '@material-ui/styles'
+
+const Ancor = styled.a`
+  text-decoration: none;
+`
+
+const useStyles = makeStyles({
+  diplayMenu: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'space-evenly'
+  },
+
+  padding: {
+    padding: '30px'
+  }
+})
+
+const pages = ['Novo', 'Posts']
+const settings = ['Perfil', 'Sair']
 
 const Header = () => {
-  const { userName, setUserName } = useContext(UserContext)
+  const classes = useStyles()
+  const { userName } = useContext(UserContext)
   const [anchorElNav, setAnchorElNav] = React.useState(null)
   const [anchorElUser, setAnchorElUser] = React.useState(null)
-
-  const pages = ['Novo', 'Posts']
-  const settings = ['Perfil', 'Sair']
 
   const handleOpenNavMenu = event => {
     setAnchorElNav(event.currentTarget)
@@ -46,12 +66,14 @@ const Header = () => {
             component="div"
             sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
           >
-            <img
-              src="/codeleap_logo_black.png"
-              alt="CodeLeap Logo"
-              width="80"
-              height="30"
-            />
+            <Ancor href="/">
+              <img
+                src="/codeleap_logo_black.png"
+                alt="CodeLeap Logo"
+                width="80"
+                height="30"
+              />
+            </Ancor>
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -84,7 +106,7 @@ const Header = () => {
               }}
             >
               {pages.map(page => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <MenuItem onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
               ))}
@@ -96,12 +118,14 @@ const Header = () => {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
           >
-            <img
-              src="/codeleap_logo_black.png"
-              alt="CodeLeap Logo"
-              width="80"
-              height="30"
-            />
+            <Ancor href="/">
+              <img
+                src="/codeleap_logo_black.png"
+                alt="CodeLeap Logo"
+                width="80"
+                height="30"
+              />
+            </Ancor>
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map(page => (
@@ -140,11 +164,16 @@ const Header = () => {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map(setting => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
+              <MenuItem
+                className={classes.diplayMenu}
+                onClick={handleCloseUserMenu}
+              >
+                <Button onClick={() => console.log('licou')} textAlign="center">
+                  Profile
+                </Button>
+                <Button textAlign="center">Logout</Button>
+                <Button textAlign="center">Logout</Button>
+              </MenuItem>
             </Menu>
           </Box>
         </Toolbar>
