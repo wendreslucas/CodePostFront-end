@@ -1,11 +1,13 @@
 import styled from 'styled-components'
 
 export const StylePosts = styled.div`
-  border: 1px solid;
+  border: 1px solid #777777;
   width: 723px;
   padding-bottom: 10px;
   margin-bottom: 30px;
-
+  -webkit-box-shadow: 9px 11px 5px -6px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 9px 11px 5px -6px rgba(0, 0, 0, 0.75);
+  box-shadow: 9px 11px 5px -6px rgba(0, 0, 0, 0.75);
   .DivHeader {
     display: flex;
     flex-direction: row;

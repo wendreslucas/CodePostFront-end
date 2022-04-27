@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const StyleHeader = styled.div`
   width: ${props => props.size};
-  height: 80px;
+  height: 50px;
   background-color: black;
   display: flex;
   justify-content: start;
