@@ -22,7 +22,7 @@ const StylePosts = styled.main`
 
 const Posts = () => {
   useEffect(() => {
-    document.title = 'CodePost | Posts'
+    document.title = 'PostCode | Posts'
   }, [])
 
   return (

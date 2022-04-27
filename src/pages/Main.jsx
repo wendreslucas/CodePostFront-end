@@ -7,7 +7,7 @@ import Footer from '../components/Footer'
 
 const Main = () => {
   useEffect(() => {
-    document.title = 'CodePost | Create Post'
+    document.title = 'PostCode | Create Post'
   }, [])
   return (
     <>

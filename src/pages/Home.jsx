@@ -20,7 +20,7 @@ export const StyleImage = styled.div`
 
 const Home = () => {
   useEffect(() => {
-    document.title = 'CodePost | Home'
+    document.title = 'PostCode | Home'
   }, [])
 
   return (
@@ -29,8 +29,8 @@ const Home = () => {
       <StyleDiv>
         <StyleImage>
           <img
-            src="/codepost_logo.svg"
-            alt="CodeLeap Logo"
+            src="/postcode_logo.svg"
+            alt="Postcode Logo"
             width="608"
             height="167"
           />
