@@ -11,7 +11,7 @@ const FormLogin = () => {
   const { userName, setUserName } = React.useContext(UserContext)
   const [name, setName] = useState()
   const [open, setOpen] = React.useState(true)
-  // const handleOpen = () => setOpen(true)
+
   const handleClose = () => setOpen(false)
 
   return (

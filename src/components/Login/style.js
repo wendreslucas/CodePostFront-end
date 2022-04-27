@@ -15,6 +15,9 @@ export const StyleForm = styled.form`
   border: 1px solid #777777;
   height: 220px;
   width: 500px;
+  -webkit-box-shadow: 9px 11px 5px -6px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 9px 11px 5px -6px rgba(0, 0, 0, 0.75);
+  box-shadow: 9px 11px 5px -6px rgba(0, 0, 0, 0.75);
 
   .input {
     border-radius: 4px;
