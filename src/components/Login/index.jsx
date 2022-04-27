@@ -27,7 +27,7 @@ const FormLogin = () => {
             onSubmit={e => {
               e.preventDefault()
               setUserName(name)
-              navigate('/main')
+              navigate('/home')
             }}
           >
             <Subtitle subtitle="Welcome to CodeLeap network!" />
