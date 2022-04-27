@@ -29,7 +29,7 @@ const Home = () => {
       <StyleDiv>
         <StyleImage>
           <img
-            src="/codeleap_logo_black.png"
+            src="/codepost_logo.svg"
             alt="CodeLeap Logo"
             width="608"
             height="167"

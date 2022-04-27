@@ -30,7 +30,7 @@ const FormLogin = () => {
               navigate('/home')
             }}
           >
-            <Subtitle subtitle="Welcome to CodeLeap network!" />
+            <Subtitle subtitle="Welcome to CodePost network!" />
             <Label margin="13px" label="Please enter your username" />
             <input
               autoFocus

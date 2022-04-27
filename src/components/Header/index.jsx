@@ -74,7 +74,7 @@ const Header = () => {
           >
             <Ancor href="/">
               <img
-                src="/codeleap_logo_black.png"
+                src="/postcode_logo.svg"
                 alt="CodeLeap Logo"
                 width="90"
                 height="30"
