@@ -70,8 +70,6 @@ export function PostContextProvider({ children }) {
       posts: data.posts?.filter(post => post._id !== id)
     }
 
-    navigate.push('/')
-    console.log('passou')
     mutate(updatedPosts, false)
   }
 

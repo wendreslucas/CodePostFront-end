@@ -12,6 +12,7 @@ import Button from '@mui/material/Button'
 import Tooltip from '@mui/material/Tooltip'
 import MenuItem from '@mui/material/MenuItem'
 import { UserContext } from '../../context/UserContext'
+import { SettingContext } from '../../context/SettingContext'
 import styled from 'styled-components'
 import { makeStyles } from '@material-ui/styles'
 
@@ -38,6 +39,8 @@ const settings = ['Perfil', 'Sair']
 const Header = () => {
   const classes = useStyles()
   const { userName } = useContext(UserContext)
+  const { handleLogout, handleProfile } = useContext(SettingContext)
+
   const [anchorElNav, setAnchorElNav] = React.useState(null)
   const [anchorElUser, setAnchorElUser] = React.useState(null)
 
@@ -164,15 +167,12 @@ const Header = () => {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              <MenuItem
-                className={classes.diplayMenu}
-                onClick={handleCloseUserMenu}
-              >
-                <Button onClick={() => console.log('licou')} textAlign="center">
-                  Profile
-                </Button>
-                <Button textAlign="center">Logout</Button>
-                <Button textAlign="center">Logout</Button>
+              <MenuItem className={classes.diplayMenu} onClick={handleProfile}>
+                <Typography textAlign="center">Profile</Typography>
+              </MenuItem>
+
+              <MenuItem className={classes.diplayMenu} onClick={handleLogout}>
+                <Typography textAlign="center">Logout</Typography>
               </MenuItem>
             </Menu>
           </Box>
