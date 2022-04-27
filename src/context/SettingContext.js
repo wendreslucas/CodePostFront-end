@@ -15,6 +15,16 @@ export function SettingContextProvider({ children }) {
     navigate('/main')
   }
 
+  function handlePosts() {
+    setOpenNav(false)
+    navigate('/posts')
+  }
+
+  function handleHome() {
+    setOpenNav(false)
+    navigate('/home')
+  }
+
   function handleLogout() {
     setOpenMenuUser(false)
     navigate('/')
@@ -29,6 +39,8 @@ export function SettingContextProvider({ children }) {
     <SettingContext.Provider
       value={{
         handleNovoPost,
+        handlePosts,
+        handleHome,
         handleLogout,
         handleProfile
       }}

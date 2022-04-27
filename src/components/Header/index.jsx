@@ -33,14 +33,16 @@ const useStyles = makeStyles({
   }
 })
 
-const pages = ['Novo', 'Posts']
-const settings = ['Perfil', 'Sair']
-
 const Header = () => {
   const classes = useStyles()
   const { userName } = useContext(UserContext)
-  const { handleNovoPost, handleLogout, handleProfile } =
-    useContext(SettingContext)
+  const {
+    handleNovoPost,
+    handlePosts,
+    handleHome,
+    handleLogout,
+    handleProfile
+  } = useContext(SettingContext)
 
   const [anchorElNav, setAnchorElNav] = React.useState(null)
   const [anchorElUser, setAnchorElUser] = React.useState(null)
@@ -74,7 +76,7 @@ const Header = () => {
               <img
                 src="/codeleap_logo_black.png"
                 alt="CodeLeap Logo"
-                width="80"
+                width="90"
                 height="30"
               />
             </Ancor>
@@ -112,10 +114,10 @@ const Header = () => {
               <MenuItem onClick={handleNovoPost}>
                 <Typography textAlign="center">Novo</Typography>
               </MenuItem>
-              <MenuItem onClick={handleCloseNavMenu}>
+              <MenuItem onClick={handlePosts}>
                 <Typography textAlign="center">Posts</Typography>
               </MenuItem>
-              <MenuItem onClick={handleCloseNavMenu}>
+              <MenuItem onClick={handleHome}>
                 <Typography textAlign="center">Home</Typography>
               </MenuItem>
             </Menu>
@@ -143,13 +145,13 @@ const Header = () => {
               NOVO
             </Button>
             <Button
-              onClick={handleCloseNavMenu}
+              onClick={handlePosts}
               sx={{ my: 2, color: 'white', display: 'block' }}
             >
               POSTS
             </Button>
             <Button
-              onClick={handleCloseNavMenu}
+              onClick={handleHome}
               sx={{ my: 2, color: 'white', display: 'block' }}
             >
               HOME
