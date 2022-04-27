@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Header from '../components/Header'
 import PostList from '../components/PostList'
-
+import Footer from '../components/Footer'
 import HeaderPost from '../components/HeaderPost'
 
 const StyleDiv = styled.div`
@@ -30,6 +30,7 @@ const Posts = () => {
           <PostList />
         </StylePosts>
       </StyleDiv>
+      <Footer />
     </>
   )
 }

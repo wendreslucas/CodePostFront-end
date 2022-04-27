@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from '../components/Header'
 import styled from 'styled-components'
+import Footer from '../components/Footer'
 
 const StyleDiv = styled.div`
   display: flex;
@@ -9,7 +10,7 @@ const StyleDiv = styled.div`
   justify-content: center;
 
   width: 100%;
-  height: 89vh;
+  height: 81vh;
 `
 
 export const StyleImage = styled.div`
@@ -32,6 +33,7 @@ const Home = () => {
           />
         </StyleImage>
       </StyleDiv>
+      <Footer />
     </>
   )
 }

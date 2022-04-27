@@ -1,12 +1,11 @@
-import React, { useContext } from 'react'
-import { UserContext } from '../context/UserContext'
+import React from 'react'
 import AddPost from '../components/AddPost'
 import HeaderPost from '../components/HeaderPost'
 import { StyleMain } from './StyleMain'
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 const Main = () => {
-  const { userName, setUserName } = useContext(UserContext)
   return (
     <>
       <Header />
@@ -18,6 +17,7 @@ const Main = () => {
           <AddPost />
         </div>
       </StyleMain>
+      <Footer />
     </>
   )
 }
