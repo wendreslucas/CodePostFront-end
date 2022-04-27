@@ -1,18 +1,29 @@
 import React from 'react'
-import { Route, Routes } from 'react-router-dom'
-import Main from './pages/Main'
-import Login from './pages/Login'
-import Home from './pages/Home'
-import Posts from './pages/Posts'
+import { UserContextProvider } from './context/UserContext'
+import { createRoot } from 'react-dom/client'
+import { GlobalStyle } from './components/Ui/GlobalStyle'
+import { PostContextProvider } from './context/PostContext'
+import { BrowserRouter } from 'react-router-dom'
+import { SettingContextProvider } from './context/SettingContext'
+import { ThemeProvider } from 'styled-components'
+import Switcher from './utils/Switcher'
+import { temaClaro, temaEscuro } from './utils/Tema'
+import { PagesRoot } from './pages/Root'
 
 function App() {
   return (
-    <Routes>
-      <Route exact path="/" element={<Login />} />
-      <Route exact path="/home" element={<Home />} />
-      <Route path="/main" element={<Main />} />
-      <Route path="/posts" element={<Posts />} />
-    </Routes>
+    <BrowserRouter>
+      <UserContextProvider>
+        <SettingContextProvider>
+          <PostContextProvider>
+            {/* <ThemeProvider theme={tema ? temaClaro : temaEscuro}> */}
+            <GlobalStyle />
+            <PagesRoot />
+            {/* </ThemeProvider> */}
+          </PostContextProvider>
+        </SettingContextProvider>
+      </UserContextProvider>
+    </BrowserRouter>
   )
 }
 

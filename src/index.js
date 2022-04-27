@@ -1,24 +1,13 @@
-import React from 'react'
-import App from './App'
-import { UserContextProvider } from './context/UserContext'
+import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { GlobalStyle } from './components/Ui/GlobalStyle'
-import { PostContextProvider } from './context/PostContext'
-import { BrowserRouter } from 'react-router-dom'
-import { SettingContextProvider } from './context/SettingContext'
+
+import App from './App'
 
 const rootElement = document.getElementById('root')
 const root = createRoot(rootElement)
 
 root.render(
-  <BrowserRouter>
-    <UserContextProvider>
-      <SettingContextProvider>
-        <PostContextProvider>
-          <GlobalStyle />
-          <App />
-        </PostContextProvider>
-      </SettingContextProvider>
-    </UserContextProvider>
-  </BrowserRouter>
+  <StrictMode>
+    <App />
+  </StrictMode>
 )

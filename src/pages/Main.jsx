@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import AddPost from '../components/AddPost'
 import HeaderPost from '../components/HeaderPost'
 import { StyleMain } from './StyleMain'
@@ -6,6 +6,9 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 
 const Main = () => {
+  useEffect(() => {
+    document.title = 'CodePost | Create Post'
+  }, [])
   return (
     <>
       <Header />

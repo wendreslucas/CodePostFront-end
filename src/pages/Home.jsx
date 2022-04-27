@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Header from '../components/Header'
 import styled from 'styled-components'
 import Footer from '../components/Footer'
@@ -12,7 +12,6 @@ const StyleDiv = styled.div`
   width: 100%;
   height: 81vh;
 `
-
 export const StyleImage = styled.div`
   display: flex;
   justify-content: center;
@@ -20,6 +19,10 @@ export const StyleImage = styled.div`
 `
 
 const Home = () => {
+  useEffect(() => {
+    document.title = 'CodePost | Home'
+  }, [])
+
   return (
     <>
       <Header />
