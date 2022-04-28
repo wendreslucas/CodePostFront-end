@@ -5,8 +5,16 @@ import Modal from '@mui/material/Modal'
 import { useNavigate } from 'react-router-dom'
 import { UserContext } from '../../context/UserContext'
 import { StyleForm, StyleModal } from './style.js'
+import { makeStyles } from '@material-ui/styles'
+
+const useStyles = makeStyles({
+  overlay: {
+    backgroundColor: '#1e1e1e'
+  }
+})
 
 const FormLogin = () => {
+  const classes = useStyles()
   const navigate = useNavigate()
   const { userName, setUserName } = React.useContext(UserContext)
   const [name, setName] = useState()
@@ -17,6 +25,7 @@ const FormLogin = () => {
   return (
     <>
       <Modal
+        className={classes.overlay}
         open={open}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
