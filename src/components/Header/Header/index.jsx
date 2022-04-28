@@ -27,7 +27,8 @@ const useStyles = makeStyles({
     padding: '30px'
   },
   background: {
-    backgroundColor: '#0D0C0C'
+    backgroundColor: '#0D0C0C',
+    borderBottom: '1px solid #8C374E'
   }
 })
 
@@ -70,7 +71,7 @@ const Header = () => {
             component="div"
             sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
           >
-            <Ancor href="/">
+            <Ancor href="/home">
               <img
                 src="/postcode_logo_white.svg"
                 alt="CodeLeap Logo"
@@ -109,14 +110,14 @@ const Header = () => {
                 display: { xs: 'block', md: 'none' }
               }}
             >
+              <MenuItem onClick={handleHome}>
+                <Typography textAlign="center">Home</Typography>
+              </MenuItem>
               <MenuItem onClick={handleNovoPost}>
                 <Typography textAlign="center">New</Typography>
               </MenuItem>
               <MenuItem onClick={handlePosts}>
                 <Typography textAlign="center">Posts</Typography>
-              </MenuItem>
-              <MenuItem onClick={handleHome}>
-                <Typography textAlign="center">Home</Typography>
               </MenuItem>
             </Menu>
           </Box>
@@ -137,6 +138,12 @@ const Header = () => {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             <Button
+              onClick={handleHome}
+              sx={{ my: 2, color: 'white', display: 'block' }}
+            >
+              HOME
+            </Button>
+            <Button
               onClick={handleNovoPost}
               sx={{ my: 2, color: 'white', display: 'block' }}
             >
@@ -147,12 +154,6 @@ const Header = () => {
               sx={{ my: 2, color: 'white', display: 'block' }}
             >
               POSTS
-            </Button>
-            <Button
-              onClick={handleHome}
-              sx={{ my: 2, color: 'white', display: 'block' }}
-            >
-              HOME
             </Button>
           </Box>
 

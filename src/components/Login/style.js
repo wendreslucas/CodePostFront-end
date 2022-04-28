@@ -1,5 +1,12 @@
 import styled from 'styled-components'
 
+export const Container = styled.div`
+  background-color: #0d0c0c;
+
+  height: 100vh;
+  width: 100%;
+`
+
 export const StyleImage = styled.div`
   align-items: center;
   bottom: 0;
@@ -12,15 +19,18 @@ export const StyleImage = styled.div`
   top: 0;
 `
 export const StyleForm = styled.form`
+  background-color: #1e1e1e;
   border: 1px solid #777777;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   height: 220px;
   width: 500px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 
   .input {
+    background-color: #262425;
     border-radius: 4px;
     border: 1px solid #777777;
+    color: #8c8080;
     height: 28px;
     margin-left: 31px;
     padding: 6px 0 6px 11px;

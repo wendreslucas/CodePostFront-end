@@ -5,7 +5,7 @@ export const StyleMain = styled.div`
   background-color: #1e1e1e;
   display: flex;
   flex-direction: column;
-  height: 81vh;
+  height: 85vh;
 
   justify-content: center;
   padding-top: 20px;

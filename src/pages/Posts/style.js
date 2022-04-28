@@ -6,7 +6,7 @@ export const StyleDiv = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 81vh;
+  min-height: 85vh;
 `
 export const StylePosts = styled.main`
   align-items: center;

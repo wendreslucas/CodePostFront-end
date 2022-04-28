@@ -1,14 +1,17 @@
 import styled from 'styled-components'
 
 export const ModEdit = styled.div`
-  border: 1px solid;
+  background: #1e1e1e;
+  border: 1px solid #777777;
   padding-bottom: 10px;
   margin-bottom: 30px;
   width: 723px;
 
   .input {
+    background-color: #262425;
     border-radius: 4px;
     border: 1px solid #777777;
+    color: #8c8080;
     height: 28px;
     margin-left: 31px;
     margin-bottom: 19px;
@@ -17,8 +20,10 @@ export const ModEdit = styled.div`
   }
 
   .textarea {
+    background-color: #262425;
     border-radius: 4px;
     border: 1px solid #777777;
+    color: #8c8080;
     font-family: roboto;
     height: 55px;
     margin-left: 31px;
@@ -45,7 +50,7 @@ export const ModEdit = styled.div`
 `
 export const Overlay = styled.div`
   align-items: center;
-  background: rgba(242, 243, 245, 0.6);
+  background: #1e1e1e;
   bottom: 0;
   display: flex;
   justify-content: center;
@@ -56,7 +61,7 @@ export const Overlay = styled.div`
 `
 export const Container = styled.div`
   align-items: center;
-  background: #ffffff;
+  background: #0d0c0c;
   box-shadow: 0 0 60px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;

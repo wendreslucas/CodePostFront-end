@@ -5,7 +5,7 @@ export const StyleDiv = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 81vh;
+  height: 85vh;
   width: 100%;
   background-color: #1e1e1e;
 `

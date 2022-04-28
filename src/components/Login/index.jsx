@@ -1,20 +1,12 @@
 import React, { useState } from 'react'
 import Label from '../Text/Label'
 import Subtitle from '../Text/Subtitle'
-import Modal from '@mui/material/Modal'
+
 import { useNavigate } from 'react-router-dom'
 import { UserContext } from '../../context/UserContext'
-import { StyleForm, StyleModal } from './style.js'
-import { makeStyles } from '@material-ui/styles'
-
-const useStyles = makeStyles({
-  overlay: {
-    backgroundColor: '#1e1e1e'
-  }
-})
+import { Container, StyleForm, StyleModal } from './style.js'
 
 const FormLogin = () => {
-  const classes = useStyles()
   const navigate = useNavigate()
   const { userName, setUserName } = React.useContext(UserContext)
   const [name, setName] = useState()
@@ -23,38 +15,30 @@ const FormLogin = () => {
   const handleClose = () => setOpen(false)
 
   return (
-    <>
-      <Modal
-        className={classes.overlay}
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <StyleModal>
-          <StyleForm
-            onSubmit={e => {
-              e.preventDefault()
-              setUserName(name)
-              navigate('/home')
-            }}
-          >
-            <Subtitle subtitle="Welcome to CodePost network!" />
-            <Label margin="13px" label="Please enter your username" />
-            <input
-              autoFocus
-              className="input"
-              placeholder="Username"
-              type="text"
-              onChange={e => setName(e.target.value)}
-            />
-            <button className="btn" disabled={!name}>
-              ENTER
-            </button>
-          </StyleForm>
-        </StyleModal>
-      </Modal>
-    </>
+    <Container>
+      <StyleModal>
+        <StyleForm
+          onSubmit={e => {
+            e.preventDefault()
+            setUserName(name)
+            navigate('/home')
+          }}
+        >
+          <Subtitle subtitle="Welcome to CodePost network!" />
+          <Label margin="13px" label="Please enter your username" />
+          <input
+            autoFocus
+            className="input"
+            placeholder="Username"
+            type="text"
+            onChange={e => setName(e.target.value)}
+          />
+          <button className="btn" disabled={!name}>
+            ENTER
+          </button>
+        </StyleForm>
+      </StyleModal>
+    </Container>
   )
 }
 

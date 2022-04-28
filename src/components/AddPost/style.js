@@ -8,8 +8,10 @@ export const StyleFormCreate = styled.form`
   width: 723px;
 
   .input {
+    background-color: #262425;
     border-radius: 4px;
     border: 1px solid #777777;
+    color: #8c8080;
     height: 28px;
     margin-left: 31px;
     margin-bottom: 19px;
@@ -17,8 +19,10 @@ export const StyleFormCreate = styled.form`
     width: 650px;
   }
   .textarea {
+    background-color: #262425;
     border-radius: 4px;
     border: 1px solid #777777;
+    color: #8c8080;
     font-family: roboto;
     height: 55px;
     margin-left: 31px;

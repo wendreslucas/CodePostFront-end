@@ -17,7 +17,7 @@ const Home = () => {
             src="/postcode_logo.svg"
             alt="Postcode Logo"
             width="608"
-            height="167"
+            height="168"
           />
         </StyleImage>
       </StyleDiv>

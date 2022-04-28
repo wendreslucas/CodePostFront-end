@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Overlay = styled.div`
-  background: rgba(242, 243, 245, 0.6);
+  background: #1e1e1e;
   bottom: 0;
   position: fixed;
   top: 0;
@@ -14,7 +14,7 @@ export const Overlay = styled.div`
 `
 export const Container = styled.div`
   align-items: center;
-  background: #ffffff;
+  background: #1e1e1e;
   box-shadow: 0 0 60px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
@@ -25,7 +25,7 @@ export const Container = styled.div`
 `
 
 export const ModDelete = styled.form`
-  border: 1px solid;
+  border: 1px solid #777777;
   margin-bottom: 30px;
   padding-bottom: 10px;
   width: 723px;
