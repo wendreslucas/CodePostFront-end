@@ -18,17 +18,22 @@ import { makeStyles } from '@material-ui/styles'
 
 const useStyles = makeStyles({
   diplayMenu: {
+    alignItems: 'center',
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center',
     justifyContent: 'space-evenly'
   },
+
   padding: {
     padding: '30px'
   },
   background: {
     backgroundColor: '#0D0C0C',
     borderBottom: '1px solid #8C374E'
+  },
+
+  text: {
+    color: '#8c8080'
   }
 })
 
@@ -64,7 +69,7 @@ const Header = () => {
   return (
     <AppBar position="static">
       <Container className={classes.background} maxWidth="xl">
-        <Toolbar disableGutters>
+        <Toolbar disableGutters className={classes.menu}>
           <Typography
             variant="h6"
             noWrap

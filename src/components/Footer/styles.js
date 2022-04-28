@@ -10,7 +10,7 @@ export const Container = styled.footer`
   background-color: #1e1e1e;
 
   & > strong {
-    color: white;
+    color: #8c8080;
     font-size: 0.75rem;
     font-weight: 700;
     text-align: center;
