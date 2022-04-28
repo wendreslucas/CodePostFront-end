@@ -108,7 +108,7 @@ const Header = () => {
               }}
             >
               <MenuItem onClick={handleNovoPost}>
-                <Typography textAlign="center">Novo</Typography>
+                <Typography textAlign="center">New</Typography>
               </MenuItem>
               <MenuItem onClick={handlePosts}>
                 <Typography textAlign="center">Posts</Typography>
@@ -138,7 +138,7 @@ const Header = () => {
               onClick={handleNovoPost}
               sx={{ my: 2, color: 'white', display: 'block' }}
             >
-              NOVO
+              NEW
             </Button>
             <Button
               onClick={handlePosts}
