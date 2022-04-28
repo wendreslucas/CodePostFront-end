@@ -144,19 +144,19 @@ const Header = () => {
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             <Button
               onClick={handleHome}
-              sx={{ my: 2, color: 'white', display: 'block' }}
+              sx={{ my: 2, color: '#8c8080', display: 'block' }}
             >
               HOME
             </Button>
             <Button
               onClick={handleNovoPost}
-              sx={{ my: 2, color: 'white', display: 'block' }}
+              sx={{ my: 2, color: '#8c8080', display: 'block' }}
             >
               NEW
             </Button>
             <Button
               onClick={handlePosts}
-              sx={{ my: 2, color: 'white', display: 'block' }}
+              sx={{ my: 2, color: '#8c8080', display: 'block' }}
             >
               POSTS
             </Button>
