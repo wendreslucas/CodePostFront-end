@@ -4,7 +4,7 @@ import Subtitle from '../Text/Subtitle'
 import Modal from '@mui/material/Modal'
 import { useNavigate } from 'react-router-dom'
 import { UserContext } from '../../context/UserContext'
-import { StyleForm, StyleImage, StyleModal } from './style.js'
+import { StyleForm, StyleModal } from './style.js'
 
 const FormLogin = () => {
   const navigate = useNavigate()
