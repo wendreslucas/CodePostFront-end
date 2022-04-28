@@ -1,11 +1,11 @@
 import styled from 'styled-components'
 
 export const Container = styled.footer`
+  align-items: center;
   display: flex;
   justify-content: center;
-  width: 100%;
   height: 50px;
-  align-items: center;
+  width: 100%;
 
   & > strong {
     font-size: 0.85rem;

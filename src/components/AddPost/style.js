@@ -2,9 +2,10 @@ import styled from 'styled-components'
 
 export const StyleFormCreate = styled.form`
   border: 1px solid #777777;
-  width: 723px;
   padding-bottom: 10px;
   margin-bottom: 30px;
+  width: 723px;
+
   .input {
     border-radius: 4px;
     border: 1px solid #777777;
@@ -18,12 +19,12 @@ export const StyleFormCreate = styled.form`
   .textarea {
     border-radius: 4px;
     border: 1px solid #777777;
+    font-family: roboto;
+    height: 55px;
     margin-left: 31px;
     padding: 6px 0 6px 11px;
     resize: none;
     width: 650px;
-    height: 55px;
-    font-family: roboto;
   }
 
   .button {
@@ -43,9 +44,9 @@ export const StyleFormCreate = styled.form`
   }
 
   h1 {
+    color: red;
     font-size: 1.5rem;
     margin-left: 31px;
     margin-bottom: 19px;
-    color: red;
   }
 `

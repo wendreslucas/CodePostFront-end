@@ -1,15 +1,15 @@
 import styled from 'styled-components'
 
 export const StyleImage = styled.div`
-  top: 0;
-  position: fixed;
-  left: 0;
-  right: 0;
+  align-items: center;
   bottom: 0;
+  cursor: pointer;
   display: flex;
   justify-content: center;
-  align-items: center;
-  cursor: pointer;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
 `
 export const StyleForm = styled.form`
   border: 1px solid #777777;
@@ -46,11 +46,11 @@ export const StyleForm = styled.form`
   }
 `
 export const StyleModal = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   background-color: #fff;
+  position: absolute;
   border: 1px solid #000;
   box-shadow: 24px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 `

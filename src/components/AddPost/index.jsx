@@ -1,11 +1,11 @@
 import React, { useContext } from 'react'
-import { PostContext } from '../../context/PostContext'
-import Label from '../Text/Label'
-import Subtitle from '../Text/Subtitle'
 import { StyleFormCreate } from './style.js'
-import Posts from '../PostList'
-import Slide from '@mui/material/Slide'
+import Subtitle from '../Text/Subtitle'
+import Label from '../Text/Label'
 import Snackbar from '@mui/material/Snackbar'
+import Posts from '../Post/PostList'
+import Slide from '@mui/material/Slide'
+import { PostContext } from '../../context/PostContext'
 
 function TransitionDown(props) {
   return <Slide {...props} direction="down" />

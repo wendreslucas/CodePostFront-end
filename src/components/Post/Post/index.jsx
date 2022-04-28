@@ -1,0 +1,43 @@
+import React, { useContext } from 'react'
+import { PostContext } from '../../../context/PostContext'
+import HeaderPost from '../../Header/HeaderPost'
+import { StylePosts } from './style.js'
+import User from '../../Text/User'
+import Moment from '../../Text/Moment'
+import Text from '../../Text/TextContent'
+import moment from 'moment'
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
+import ModeEditOutlineRoundedIcon from '@mui/icons-material/ModeEditOutlineRounded'
+
+const pointer = {
+  cursor: 'pointer',
+  color: 'white'
+}
+
+function Post({ id, title, content, username, created_datetime }) {
+  const { handleEdit, handleDelete } = useContext(PostContext)
+
+  return (
+    <StylePosts key={id}>
+      <div className="DivHeader" key={id}>
+        <HeaderPost size=" 723px" title={title} />
+        <div className="BackImagem">
+          <DeleteForeverIcon sx={pointer} onClick={() => handleDelete(id)} />
+          <ModeEditOutlineRoundedIcon
+            sx={pointer}
+            onClick={() => {
+              handleEdit(id, title, content)
+            }}
+          />
+        </div>
+      </div>
+      <div className="Info">
+        <User user={username} />
+        <Moment moment={moment(created_datetime).fromNow()} />
+      </div>
+      <Text text={content} />
+    </StylePosts>
+  )
+}
+
+export default Post
