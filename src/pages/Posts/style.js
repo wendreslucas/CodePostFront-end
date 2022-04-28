@@ -2,9 +2,11 @@ import styled from 'styled-components'
 
 export const StyleDiv = styled.div`
   align-items: center;
+  background-color: #1e1e1e;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  height: 81vh;
 `
 export const StylePosts = styled.main`
   align-items: center;

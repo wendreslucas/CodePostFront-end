@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const StyleText = styled.p`
-  color: black;
+  color: white;
   font-size: 18px;
   font-weight: 400;
   line-height: 21px;

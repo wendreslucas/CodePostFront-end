@@ -2,12 +2,10 @@ import styled from 'styled-components'
 
 export const StyleFormCreate = styled.form`
   border: 1px solid #777777;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   padding-bottom: 10px;
   margin-bottom: 30px;
   width: 723px;
-  /* -webkit-box-shadow: 9px 11px 5px -6px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 9px 11px 5px -6px rgba(0, 0, 0, 0.75); */
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 
   .input {
     border-radius: 4px;
@@ -16,7 +14,6 @@ export const StyleFormCreate = styled.form`
     margin-left: 31px;
     margin-bottom: 19px;
     padding: 6px 0 6px 11px;
-    /* width: ${props => props.size}; */
     width: 650px;
   }
   .textarea {

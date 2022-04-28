@@ -23,9 +23,11 @@ const useStyles = makeStyles({
     alignItems: 'center',
     justifyContent: 'space-evenly'
   },
-
   padding: {
     padding: '30px'
+  },
+  background: {
+    backgroundColor: '#0D0C0C'
   }
 })
 
@@ -60,7 +62,7 @@ const Header = () => {
 
   return (
     <AppBar position="static">
-      <Container maxWidth="xl">
+      <Container className={classes.background} maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
             variant="h6"
@@ -70,7 +72,7 @@ const Header = () => {
           >
             <Ancor href="/">
               <img
-                src="/postcode_logo.svg"
+                src="/postcode_logo_white.svg"
                 alt="CodeLeap Logo"
                 width="90"
                 height="30"

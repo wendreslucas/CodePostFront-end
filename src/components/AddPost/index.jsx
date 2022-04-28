@@ -68,7 +68,7 @@ function AddPost() {
         message="Post created successfully"
         key={transition ? transition.name : ''}
       />
-      <Posts />
+      {/* <Posts /> */}
     </>
   )
 }

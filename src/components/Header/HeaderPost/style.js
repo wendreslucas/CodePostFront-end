@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const StyleHeader = styled.div`
   align-items: center;
-  background-color: black;
+  background-color: #0d0c0c;
   color: white;
   display: flex;
   font-size: 22px;

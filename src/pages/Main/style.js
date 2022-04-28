@@ -2,8 +2,11 @@ import styled from 'styled-components'
 
 export const StyleMain = styled.div`
   align-items: center;
+  background-color: #1e1e1e;
   display: flex;
   flex-direction: column;
+  height: 81vh;
+
   justify-content: center;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -24,7 +27,7 @@ export const StyleMain = styled.div`
 
   .BackUser {
     align-items: center;
-    background: black;
+    background: #0d0c0c;
     display: flex;
     height: 80px;
     justify-content: space-evenly;
