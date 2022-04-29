@@ -16,3 +16,14 @@ export const Container = styled.footer`
     text-align: center;
   }
 `
+
+export const Ancor = styled.a`
+  color: #8c8080;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    color: #8c374e;
+  }
+`
