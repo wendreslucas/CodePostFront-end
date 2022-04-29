@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import Header from '../../components/Header/Header'
 import Footer from '../../components/Footer'
-import { StyleDiv, StyleImage } from './style'
+import { StyleDiv, StyleImage, Imagem } from './style'
 
 const Home = () => {
   useEffect(() => {
@@ -13,7 +13,7 @@ const Home = () => {
       <Header />
       <StyleDiv>
         <StyleImage>
-          <img
+          <Imagem
             src="/postcode_logo.svg"
             alt="Postcode Logo"
             width="608"
