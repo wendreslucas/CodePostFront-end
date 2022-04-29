@@ -7,6 +7,10 @@ export const StyleFormCreate = styled.form`
   margin-bottom: 30px;
   width: 723px;
 
+  @media (max-width: 768px) {
+    max-width: 80%;
+  }
+
   .input {
     background-color: #262425;
     border-radius: 4px;
@@ -17,6 +21,10 @@ export const StyleFormCreate = styled.form`
     margin-bottom: 19px;
     padding: 6px 0 6px 11px;
     width: 650px;
+
+    @media (max-width: 768px) {
+      max-width: 85%;
+    }
   }
   .textarea {
     background-color: #262425;
@@ -29,6 +37,10 @@ export const StyleFormCreate = styled.form`
     padding: 6px 0 6px 11px;
     resize: none;
     width: 650px;
+
+    @media (max-width: 768px) {
+      max-width: 85%;
+    }
   }
 
   .button {
@@ -42,15 +54,15 @@ export const StyleFormCreate = styled.form`
     margin-top: 25px;
     margin-left: 570px;
     width: 111px;
+
+    @media (max-width: 768px) {
+      font-size: 12px;
+      margin-left: 375px;
+      width: 70px;
+    }
+
     &:disabled {
       background: #777777;
     }
-  }
-
-  h1 {
-    color: red;
-    font-size: 1.5rem;
-    margin-left: 31px;
-    margin-bottom: 19px;
   }
 `

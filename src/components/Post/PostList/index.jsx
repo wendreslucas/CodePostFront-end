@@ -9,6 +9,10 @@ function PostList() {
   const DivMap = styled.div`
     display: flex;
     flex-direction: column-reverse;
+
+    @media (max-width: 768px) {
+      max-width: 80%;
+    }
   `
 
   return (

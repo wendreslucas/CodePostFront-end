@@ -7,7 +7,10 @@ export default function Footer() {
     <Container>
       <strong>
         Study app developed by
-        <Ancor target="_blank" href="https://github.com/wendreslucas">
+        <Ancor
+          target="_blank"
+          href="https://www.linkedin.com/in/wendres-lucas/"
+        >
           {' '}
           @wendreslucas
         </Ancor>

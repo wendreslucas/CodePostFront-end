@@ -6,10 +6,14 @@ export const StyleMain = styled.div`
   display: flex;
   flex-direction: column;
   height: 85vh;
-
   justify-content: center;
   padding-top: 20px;
   padding-bottom: 20px;
+
+  @media (max-width: 768px) {
+    max-height: 83vh;
+    padding-bottom: 10px;
+  }
 
   .DivMain {
     align-items: center;
@@ -17,27 +21,18 @@ export const StyleMain = styled.div`
     display: flex;
     flex-direction: column;
     width: auto;
+
+    @media (max-width: 768px) {
+      max-width: 80%;
+    }
   }
 
   .DivHeader {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-  }
-
-  .BackUser {
-    align-items: center;
-    background: #0d0c0c;
-    display: flex;
-    height: 80px;
-    justify-content: space-evenly;
-    padding-right: 80px;
-    width: 100px;
-  }
-
-  .StyleUser {
-    color: white;
-    cursor: pointer;
-    font-size: 16px;
+    @media (max-width: 768px) {
+      max-width: 610px;
+    }
   }
 `

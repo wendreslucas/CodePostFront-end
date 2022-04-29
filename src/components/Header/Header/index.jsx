@@ -132,9 +132,9 @@ const Header = () => {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
           >
-            <Ancor href="/">
+            <Ancor href="/home">
               <img
-                src="/codeleap_logo_black.png"
+                src="/postcode_logo_white.svg"
                 alt="CodeLeap Logo"
                 width="80"
                 height="30"

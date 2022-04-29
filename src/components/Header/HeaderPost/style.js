@@ -13,4 +13,12 @@ export const StyleHeader = styled.div`
   padding-left: 37px;
   transition: all 0.3s ease-in-out;
   width: ${props => props.size};
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+    margin-bottom: 16px;
+    max-height: 83vh;
+    max-width: 612px;
+    padding-bottom: 10px;
+  }
 `
