@@ -5,4 +5,8 @@ export const StyleSubtitle = styled.h2`
   font-size: 22px;
   font-weight: 700;
   padding: 23px 0 30px 32px;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
 `

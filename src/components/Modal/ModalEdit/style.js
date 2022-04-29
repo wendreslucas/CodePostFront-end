@@ -7,6 +7,10 @@ export const ModEdit = styled.div`
   margin-bottom: 30px;
   width: 723px;
 
+  @media (max-width: 768px) {
+    max-width: 490px;
+  }
+
   .input {
     background-color: #262425;
     border-radius: 4px;
@@ -17,6 +21,10 @@ export const ModEdit = styled.div`
     margin-bottom: 19px;
     padding: 6px 0 6px 11px;
     width: 650px;
+
+    @media (max-width: 768px) {
+      max-width: 85%;
+    }
   }
 
   .textarea {
@@ -30,6 +38,10 @@ export const ModEdit = styled.div`
     padding: 6px 0 6px 11px;
     resize: none;
     width: 650px;
+
+    @media (max-width: 768px) {
+      max-width: 85%;
+    }
   }
 
   .button {
@@ -43,8 +55,15 @@ export const ModEdit = styled.div`
     margin-top: 25px;
     margin-left: 570px;
     width: 111px;
+
     &:disabled {
       background: #777777;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 12px;
+      margin-left: 375px;
+      width: 70px;
     }
   }
 `
