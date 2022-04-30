@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import media from '../../Ui/Media'
 
 export const StyleLabel = styled.h3`
   color: white;
@@ -8,4 +9,9 @@ export const StyleLabel = styled.h3`
   padding-left: 32px;
   padding-bottom: ${props => props.bottom};
   margin-bottom: ${props => props.margin};
+
+  ${media.mobile} {
+    font-size: 16px;
+    margin-bottom: 0;
+  }
 `

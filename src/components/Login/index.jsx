@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import Label from '../Text/Label'
 import Subtitle from '../Text/Subtitle'
-
+import Input from '../Input/Input'
+import StyleButton from '../Buttons/Button'
 import { useNavigate } from 'react-router-dom'
 import { UserContext } from '../../context/UserContext'
 import { Container, StyleForm, StyleModal } from './style.js'
@@ -16,28 +17,29 @@ const FormLogin = () => {
 
   return (
     <Container>
-      <StyleModal>
-        <StyleForm
-          onSubmit={e => {
-            e.preventDefault()
-            setUserName(name)
-            navigate('/home')
-          }}
-        >
-          <Subtitle subtitle="Welcome to CodePost network!" />
-          <Label margin="13px" label="Please enter your username" />
-          <input
-            autoFocus
-            className="input"
-            placeholder="Username"
-            type="text"
-            onChange={e => setName(e.target.value)}
-          />
-          <button className="btn" disabled={!name}>
-            ENTER
-          </button>
-        </StyleForm>
-      </StyleModal>
+      <StyleForm
+        onSubmit={e => {
+          e.preventDefault()
+          setUserName(name)
+          navigate('/home')
+        }}
+      >
+        <Subtitle subtitle="Welcome to CodePost network!" />
+        <Label margin="13px" label="Please enter your username" />
+        <Input
+          autoFocus
+          placeholder="Username"
+          type="text"
+          onChange={e => setName(e.target.value)}
+          size="444px"
+        />
+        <StyleButton
+          margin="357px"
+          size="111px"
+          disabled={!name}
+          text="ENTER"
+        />
+      </StyleForm>
     </Container>
   )
 }

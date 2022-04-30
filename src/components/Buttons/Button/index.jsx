@@ -1,8 +1,13 @@
 import React from 'react'
 import { StyleButton } from './style'
 
-const Button = props => {
-  return <StyleButton>{props.text}</StyleButton>
+function Button(props) {
+  const { text, disabled, margin, size } = props
+  return (
+    <StyleButton disabled={disabled} margin={margin} size={size}>
+      {text}
+    </StyleButton>
+  )
 }
 
 export default Button

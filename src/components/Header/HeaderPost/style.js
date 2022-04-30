@@ -21,4 +21,10 @@ export const StyleHeader = styled.div`
     max-width: 612px;
     padding-bottom: 10px;
   }
+
+  @media (min-width: 375px) {
+    font-size: 16px;
+    max-width: 298px;
+    padding-bottom: 10px;
+  }
 `
