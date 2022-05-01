@@ -35,4 +35,9 @@ export const GlobalStyle = createGlobalStyle`
       background-color:#8C374E;
     }
   }
+
+  ::selection {
+  color: #8C374E;
+  background: #8c8080;
+}
 `
