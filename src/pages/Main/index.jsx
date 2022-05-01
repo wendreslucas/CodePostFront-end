@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
-import Header from '../../components/Header/Header'
-import HeaderPost from '../../components/Header/HeaderPost'
+import Header from '../../components/Headers/Header'
+import HeaderPost from '../../components/Headers/HeaderPost'
 import AddPost from '../../components/AddPost'
 import Footer from '../../components/Footer'
 import { StyleMain } from './style'

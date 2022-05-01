@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
-import Header from '../../components/Header/Header'
-import HeaderPost from '../../components/Header/HeaderPost'
+import Header from '../../components/Headers/Header'
+import HeaderPost from '../../components/Headers/HeaderPost'
 import PostList from '../../components/Post/PostList'
 import Footer from '../../components/Footer'
 import { StyleDiv, StylePosts } from './style'

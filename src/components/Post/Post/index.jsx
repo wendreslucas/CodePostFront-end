@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { PostContext } from '../../../context/PostContext'
-import HeaderPost from '../../Header/HeaderPost'
+import HeaderPost from '../../Headers/HeaderPost'
 import { StylePosts } from './style.js'
 import User from '../../Text/User'
 import Moment from '../../Text/Moment'

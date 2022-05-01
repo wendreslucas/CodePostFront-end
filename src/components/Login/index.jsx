@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Label from '../Text/Label'
 import Subtitle from '../Text/Subtitle'
-import Input from '../Input/Input'
+import Input from '../Inputs/Input'
 import StyleButton from '../Buttons/Button'
 import { useNavigate } from 'react-router-dom'
 import { UserContext } from '../../context/UserContext'
