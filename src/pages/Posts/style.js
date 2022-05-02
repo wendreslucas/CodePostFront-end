@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import media from '../../components/Ui/Media'
 
 export const StyleDiv = styled.div`
   align-items: center;
@@ -7,11 +8,6 @@ export const StyleDiv = styled.div`
   flex-direction: column;
   justify-content: center;
   min-height: 85vh;
-
-  @media (max-width: 768px) {
-    min-height: 83vh;
-    padding-bottom: 10px;
-  }
 `
 export const StylePosts = styled.main`
   align-items: center;
@@ -21,7 +17,7 @@ export const StylePosts = styled.main`
   margin-top: 40px;
   width: auto;
 
-  @media (max-width: 768px) {
-    max-width: 80%;
+  ${media.mobile} {
+    width: 80%;
   }
 `

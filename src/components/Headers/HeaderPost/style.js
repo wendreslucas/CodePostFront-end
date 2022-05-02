@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import media from '../../Ui/Media'
 
 export const StyleHeader = styled.div`
   align-items: center;
@@ -13,4 +14,10 @@ export const StyleHeader = styled.div`
   padding-left: 37px;
   transition: all 0.3s ease-in-out;
   width: ${props => props.size};
+
+  ${media.mobile} {
+    font-size: 16px;
+    padding-left: 27px;
+    width: 100%;
+  }
 `

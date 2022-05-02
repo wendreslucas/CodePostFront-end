@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import media from '../../Ui/Media'
 
 export const StyleText = styled.p`
   color: white;
@@ -8,4 +9,8 @@ export const StyleText = styled.p`
   padding: 0 31px 10px 30px;
   text-align: left;
   vertical-align: top;
+
+  ${media.mobile} {
+    font-size: 15px;
+  }
 `

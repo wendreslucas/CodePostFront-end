@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import media from '../../Ui/Media'
 
 export const StyleUser = styled.p`
   font-size: 18px;
@@ -11,6 +12,10 @@ export const StyleUser = styled.p`
 
   &:hover {
     color: #7777;
+  }
+
+  ${media.mobile} {
+    font-size: 14px;
   }
 `
 export const StyleAncor = styled.a`

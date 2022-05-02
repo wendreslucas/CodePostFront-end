@@ -1,19 +1,10 @@
 import React from 'react'
 import { useAxios } from '../../../hooks/useAxios'
 import Post from '../Post'
-import styled from 'styled-components'
+import { DivMap } from './style'
 
 function PostList() {
   const { data } = useAxios('posts')
-
-  const DivMap = styled.div`
-    display: flex;
-    flex-direction: column-reverse;
-
-    @media (max-width: 768px) {
-      max-width: 80%;
-    }
-  `
 
   return (
     <DivMap>
