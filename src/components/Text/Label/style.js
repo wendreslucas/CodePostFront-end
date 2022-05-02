@@ -13,5 +13,6 @@ export const StyleLabel = styled.h3`
   ${media.mobile} {
     font-size: 16px;
     margin-bottom: 0;
+    padding-bottom: 0;
   }
 `

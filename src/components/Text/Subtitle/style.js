@@ -6,9 +6,10 @@ export const StyleSubtitle = styled.h2`
   font-size: 22px;
   font-weight: 700;
   padding: 23px 0 30px 32px;
+  margin-top: ${props => props.margin};
 
   ${media.mobile} {
     font-size: 16px;
-    margin-top: 30px;
+    /* margin-top: 30px; */
   }
 `

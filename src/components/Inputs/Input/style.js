@@ -13,7 +13,7 @@ export const InputWrapper = styled.input`
   width: ${props => props.size};
 
   ${media.mobile} {
-    margin-bottom: 0;
+    margin-bottom: 25px;
     margin-top: 20px;
     padding: 6px 0 6px 11px;
     width: 80%;

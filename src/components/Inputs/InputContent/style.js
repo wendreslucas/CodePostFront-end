@@ -14,5 +14,8 @@ export const StyleTextArea = styled.textarea`
     background-color: #262425;
     color: #8c8080;
     width: 80%;
+    margin-bottom: 25px;
+    margin-top: 20px;
+    margin-left: 25px;
   }
 `

@@ -54,12 +54,10 @@ function AddPost() {
 
         <Button
           onClick={handleClick(TransitionDown)}
-          className="button"
           type="submit"
           disabled={!title || !content}
-        >
-          CREATE
-        </Button>
+          text="CREATE"
+        />
       </StyleFormCreate>
       <Snackbar
         open={open}
@@ -69,7 +67,6 @@ function AddPost() {
         message="Post created successfully"
         key={transition ? transition.name : ''}
       />
-      {/* <Posts /> */}
     </>
   )
 }
