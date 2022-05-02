@@ -7,6 +7,9 @@ import { IoClose } from 'react-icons/io5'
 import { ModEdit, Overlay, Container, Header, FormContainer } from './style.js'
 import Slide from '@mui/material/Slide'
 import Snackbar from '@mui/material/Snackbar'
+import Input from '../../Inputs/Input'
+import TextArea from '../../Inputs/InputContent'
+import Button from '../../Buttons/Button'
 
 function TransitionDown(props) {
   return <Slide {...props} direction="down" />
@@ -46,29 +49,29 @@ export default function ModalEdit() {
           </Header>
           <FormContainer onSubmit={handleSubmit}>
             <Label bottom="13px" label="Title" />
-            <input
+            <Input
               autoFocus
-              className="input"
               name="title"
-              value={title}
-              type="text"
               onChange={handleTitle}
+              size="658px"
+              type="text"
+              value={title}
             />
-            <textarea
-              className="textarea"
+            <Label bottom="13px" label="Content" />
+            <TextArea
               name="content"
               value={content}
               type="text"
               onChange={handleContent}
               max={50000}
             />
-            <button
-              className="button"
+            <Button
+              size="111px"
+              text="SAVE"
+              margin="573px"
               type="submit"
               onClick={handleClick(TransitionDown)}
-            >
-              SAVE
-            </button>
+            />
           </FormContainer>
           <Snackbar
             open={open}

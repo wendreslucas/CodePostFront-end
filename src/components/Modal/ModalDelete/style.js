@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import media from '../../Ui/Media'
 
 export const Overlay = styled.div`
   background: #1e1e1e;
@@ -30,8 +31,8 @@ export const ModDelete = styled.form`
   padding-bottom: 10px;
   width: 723px;
 
-  @media (max-width: 768px) {
-    max-width: 490px;
+  ${media.mobile} {
+    width: 80%;
   }
 `
 
@@ -53,6 +54,10 @@ export const Header = styled.div`
     font-size: 16px;
     margin-right: 35px;
     max-height: 25px;
+  }
+
+  ${media.mobile} {
+    font-size: 0.7rem;
   }
 `
 export const FormContainer = styled.form`
@@ -79,10 +84,4 @@ export const Btn = styled.button`
   margin-top: 30px;
   margin-right: 16px;
   width: 111px;
-
-  @media (max-width: 768px) {
-    font-size: 12px;
-
-    width: 70px;
-  }
 `

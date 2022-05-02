@@ -3,6 +3,7 @@ import media from '../../Ui/Media'
 
 export const StylePosts = styled.div`
   border: 1px solid #777777;
+  border-radius: 4px;
   margin-bottom: 30px;
   padding-bottom: 10px;
   width: 723px;

@@ -12,6 +12,7 @@ export const StyleDiv = styled.div`
 export const StylePosts = styled.main`
   align-items: center;
   border: 1px solid #777777;
+  border-radius: 4px;
   display: flex;
   flex-direction: column;
   margin-top: 40px;
