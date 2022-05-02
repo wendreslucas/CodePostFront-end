@@ -19,7 +19,7 @@ const Main = () => {
             <HeaderPost margin="44px" size="823px" title="CodeLeap Network" />
           </div>
           <AddPost />
-          <PostList />
+          {/* <PostList /> */}
         </div>
       </StyleMain>
       <Footer />

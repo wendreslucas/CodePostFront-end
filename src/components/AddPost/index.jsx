@@ -41,6 +41,7 @@ function AddPost() {
           type="text"
           onChange={handleTitle}
           placeholder="Title Here"
+          size="659px"
         />
         <Label bottom="7px" label="Content" />
         <TextArea
@@ -53,10 +54,12 @@ function AddPost() {
         />
 
         <Button
-          onClick={handleClick(TransitionDown)}
-          type="submit"
           disabled={!title || !content}
+          margin="574px"
+          onClick={handleClick(TransitionDown)}
+          size="111px"
           text="CREATE"
+          type="submit"
         />
       </StyleFormCreate>
       <Snackbar

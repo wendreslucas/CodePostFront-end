@@ -2,9 +2,11 @@ import styled from 'styled-components'
 import media from '../../Ui/Media'
 
 export const StyleTextArea = styled.textarea`
+  background-color: #262425;
   border-radius: 4px;
   border: 1px solid #777777;
-  margin-left: 31px;
+  color: #8c8080;
+  margin-left: 25px;
   padding: 6px 0 6px 11px;
   resize: none;
   width: 659px;
