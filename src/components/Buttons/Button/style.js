@@ -4,6 +4,7 @@ import media from '../../Ui/Media'
 export const StyleButton = styled.button`
   background: black;
   border: none;
+  border-radius: 5px;
   color: white;
   cursor: pointer;
   font-size: 16px;
@@ -20,7 +21,7 @@ export const StyleButton = styled.button`
 
   ${media.mobile} {
     font-size: 14px;
-    margin-left: 30px;
+    margin-left: 25px;
     margin-top: 20px;
     width: 80%;
   }

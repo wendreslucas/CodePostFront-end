@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import media from '../../Ui/Media'
 
 export const StyleTextArea = styled.textarea`
   border-radius: 4px;
@@ -8,4 +9,10 @@ export const StyleTextArea = styled.textarea`
   resize: none;
   width: 659px;
   height: 74px;
+
+  ${media.mobile} {
+    background-color: #262425;
+    color: #8c8080;
+    width: 80%;
+  }
 `

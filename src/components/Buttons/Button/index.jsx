@@ -2,9 +2,14 @@ import React from 'react'
 import { StyleButton } from './style'
 
 function Button(props) {
-  const { text, disabled, margin, size } = props
+  const { text, disabled, margin, size, onClick } = props
   return (
-    <StyleButton disabled={disabled} margin={margin} size={size}>
+    <StyleButton
+      disabled={disabled}
+      margin={margin}
+      size={size}
+      onClick={onClick}
+    >
       {text}
     </StyleButton>
   )

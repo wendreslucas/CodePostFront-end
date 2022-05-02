@@ -7,7 +7,7 @@ export const InputWrapper = styled.input`
   border: 1px solid #777777;
   color: #8c8080;
   height: 28px;
-  margin-left: 31px;
+  margin-left: 25px;
   margin-bottom: 19px;
   padding: 6px 0 6px 11px;
   width: ${props => props.size};
@@ -15,7 +15,7 @@ export const InputWrapper = styled.input`
   ${media.mobile} {
     margin-bottom: 0;
     margin-top: 20px;
-    padding: 0;
+    padding: 6px 0 6px 11px;
     width: 80%;
   }
 `

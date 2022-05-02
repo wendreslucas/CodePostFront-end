@@ -1,9 +1,12 @@
 import React, { useContext } from 'react'
 import { StyleFormCreate } from './style.js'
+import Input from '../Inputs/Input'
+import TextArea from '../Inputs/InputContent'
 import Subtitle from '../Text/Subtitle'
 import Label from '../Text/Label'
+import Button from '../Buttons/Button'
 import Snackbar from '@mui/material/Snackbar'
-import Posts from '../Post/PostList'
+
 import Slide from '@mui/material/Slide'
 import { PostContext } from '../../context/PostContext'
 
@@ -31,8 +34,7 @@ function AddPost() {
       <StyleFormCreate onSubmit={handleSubmit}>
         <Subtitle subtitle="What’s on your mind?" />
         <Label bottom="13px" label="Title" />
-        <input
-          className="input"
+        <Input
           autoFocus
           name="title"
           value={title}
@@ -41,8 +43,7 @@ function AddPost() {
           placeholder="Title Here"
         />
         <Label bottom="7px" label="Content" />
-        <textarea
-          className="textarea"
+        <TextArea
           name="content"
           value={content}
           type="text"
@@ -51,14 +52,14 @@ function AddPost() {
           max={50000}
         />
 
-        <button
+        <Button
           onClick={handleClick(TransitionDown)}
           className="button"
           type="submit"
           disabled={!title || !content}
         >
           CREATE
-        </button>
+        </Button>
       </StyleFormCreate>
       <Snackbar
         open={open}

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Label from '../Text/Label'
 import Subtitle from '../Text/Subtitle'
 import Input from '../Inputs/Input'
-import StyleButton from '../Buttons/Button'
+import Button from '../Buttons/Button'
 import { useNavigate } from 'react-router-dom'
 import { UserContext } from '../../context/UserContext'
 import { Container, StyleForm, StyleModal } from './style.js'
@@ -33,12 +33,7 @@ const FormLogin = () => {
           onChange={e => setName(e.target.value)}
           size="444px"
         />
-        <StyleButton
-          margin="357px"
-          size="111px"
-          disabled={!name}
-          text="ENTER"
-        />
+        <Button margin="357px" size="111px" disabled={!name} text="ENTER" />
       </StyleForm>
     </Container>
   )

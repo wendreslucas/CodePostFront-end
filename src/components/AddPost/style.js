@@ -11,7 +11,7 @@ export const StyleFormCreate = styled.form`
     max-width: 80%;
   }
 
-  .input {
+  /* .input {
     background-color: #262425;
     border-radius: 4px;
     border: 1px solid #777777;
@@ -25,8 +25,8 @@ export const StyleFormCreate = styled.form`
     @media (max-width: 768px) {
       max-width: 85%;
     }
-  }
-  .textarea {
+  } */
+  /* .textarea {
     background-color: #262425;
     border-radius: 4px;
     border: 1px solid #777777;
@@ -41,9 +41,9 @@ export const StyleFormCreate = styled.form`
     @media (max-width: 768px) {
       max-width: 85%;
     }
-  }
+  } */
 
-  .button {
+  /* .button {
     background: black;
     border: none;
     color: white;
@@ -64,5 +64,5 @@ export const StyleFormCreate = styled.form`
     &:disabled {
       background: #777777;
     }
-  }
+  } */
 `
