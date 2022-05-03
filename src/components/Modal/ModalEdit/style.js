@@ -4,6 +4,7 @@ import media from '../../Ui/Media'
 export const ModEdit = styled.div`
   background: #1e1e1e;
   border: 1px solid #777777;
+  border-radius: 4px;
   height: 330px;
   padding-bottom: 10px;
   margin-bottom: 30px;

@@ -2,19 +2,23 @@ import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
  * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto ', sans-serif;   
+    margin: 0;
+    outline: 0;
+    padding: 0;
     -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    -moz-osx-font-smoothing: grayscale;
   } 
-  html {
-    scroll-behavior: smooth;
-  }
-  body {
+  html, body {
     background-color: #0D0C0C;
+    height: 100%;
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+
   }
+
 
   ::-webkit-scrollbar {
     width: 10px;
