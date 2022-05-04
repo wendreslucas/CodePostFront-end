@@ -11,6 +11,7 @@ export const PostContext = createContext()
 export function PostContextProvider({ children }) {
   const navigate = useNavigate()
   const { data, mutate } = useAxios('posts')
+
   const { userName, setUserName } = useContext(UserContext)
 
   const [openModalEdit, setOpenModalEdit] = useState(false)
@@ -62,24 +63,29 @@ export function PostContextProvider({ children }) {
     }
   }
 
-  function handleDelete(id, userName) {
-    // if (userName != 'admin') {
-    //   alert('You are not authorized to delete this post')
-    // }
-    api.delete(`posts/${id}`)
-
-    const updatedPosts = {
-      posts: data.posts?.filter(post => post._id !== id)
+  function handleDelete(id) {
+    if (userName != 'wendreslucas') {
+      alert('You are not authorized to delete this post')
+    } else {
+      api.delete(`posts/${id}`)
+      const updatedPosts = {
+        posts: data.posts?.filter(post => post._id !== id)
+      }
+      navigate('/posts')
+      mutate(updatedPosts, false)
     }
-    navigate('/posts')
-    mutate(updatedPosts, false)
   }
 
   function handleEdit(postId, postTitle, postContent) {
-    setOpenModalEdit(true)
-    setTitle(postTitle)
-    setContent(postContent)
-    setId(postId)
+    console.log(data)
+    if (userName != 'wendreslucas') {
+      alert('You are not authorized to edit this post')
+    } else {
+      setOpenModalEdit(true)
+      setTitle(postTitle)
+      setContent(postContent)
+      setId(postId)
+    }
   }
 
   function OpenDelete() {
