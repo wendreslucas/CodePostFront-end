@@ -5,11 +5,11 @@ Hope you enjoy it!
 
 ## Used technologies
 
-ReactJS
-Styled-Components
-Material-Ui
-Axios
-SWR
+- ReactJS
+- Styled-Components
+- Material-Ui
+- Axios
+- SWR
 
 ## Start
 
