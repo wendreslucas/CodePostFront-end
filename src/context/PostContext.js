@@ -27,6 +27,7 @@ export function PostContextProvider({ children }) {
       content,
       userName
     }
+
     if (id) {
       api.put(`posts/${id}`, post)
       const updatedPosts = {
@@ -42,8 +43,6 @@ export function PostContextProvider({ children }) {
         })
       }
       setInterval(handleClose, 1000)
-      navigate('/posts')
-
       mutate(updatedPosts, false)
     } else {
       api.post('posts', post)
@@ -63,23 +62,24 @@ export function PostContextProvider({ children }) {
     }
   }
 
-  function handleDelete(id) {
-    setOpenModalDelete(true)
+  function handleDelete(id, userName) {
+    // if (userName != 'admin') {
+    //   alert('You are not authorized to delete this post')
+    // }
     api.delete(`posts/${id}`)
 
     const updatedPosts = {
       posts: data.posts?.filter(post => post._id !== id)
     }
-
+    navigate('/posts')
     mutate(updatedPosts, false)
   }
 
   function handleEdit(postId, postTitle, postContent) {
+    setOpenModalEdit(true)
     setTitle(postTitle)
     setContent(postContent)
     setId(postId)
-
-    setOpenModalEdit(true)
   }
 
   function OpenDelete() {
@@ -117,6 +117,7 @@ export function PostContextProvider({ children }) {
         handleEdit,
         handleSubmit,
         handleDelete,
+
         OpenDelete,
         CloseDelete,
         title,
