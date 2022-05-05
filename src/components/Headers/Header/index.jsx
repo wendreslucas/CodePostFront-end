@@ -76,7 +76,7 @@ const Header = () => {
             component="div"
             sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
           >
-            <Ancor href="/home">
+            <Ancor>
               <img
                 src="/postcode_logo_white.svg"
                 alt="CodeLeap Logo"
@@ -132,7 +132,7 @@ const Header = () => {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
           >
-            <Ancor href="/home">
+            <Ancor>
               <img
                 src="/postcode_logo_white.svg"
                 alt="CodeLeap Logo"
