@@ -25,7 +25,7 @@ const FormLogin = () => {
         }}
       >
         <Subtitle subtitle="Welcome to CodePost network!" />
-        <Label margin="13px" label="Please enter your username" />
+        <Label margin="13px" label="Please enter your github nickname" />
         <Input
           autoFocus
           placeholder="Username"

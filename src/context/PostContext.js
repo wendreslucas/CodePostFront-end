@@ -77,8 +77,7 @@ export function PostContextProvider({ children }) {
   }
 
   function handleEdit(postId, postTitle, postContent) {
-    console.log(data)
-    if (userName != 'wendreslucas') {
+    if (data.posts.userName != userName) {
       alert('You are not authorized to edit this post')
     } else {
       setOpenModalEdit(true)
