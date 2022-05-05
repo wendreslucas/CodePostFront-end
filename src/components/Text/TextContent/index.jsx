@@ -1,8 +1,12 @@
 import React from 'react'
-import { StyleText } from './style'
+import { StyleText, TextWrapper } from './style'
 
 const Text = props => {
-  return <StyleText>{props.text}</StyleText>
+  return (
+    <TextWrapper>
+      <StyleText>{props.text}</StyleText>
+    </TextWrapper>
+  )
 }
 
 export default Text

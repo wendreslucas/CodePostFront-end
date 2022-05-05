@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { PostContext } from '../../../context/PostContext'
 import HeaderPost from '../../Headers/HeaderPost'
-import { StylePosts } from './style.js'
+import { StylePosts, AncorUser } from './style.js'
 import User from '../../Text/User'
 import Moment from '../../Text/Moment'
 import Text from '../../Text/TextContent'
@@ -32,7 +32,9 @@ function Post({ id, title, content, username, created_datetime }) {
         </div>
       </div>
       <div className="Info">
-        <User user={username} />
+        <AncorUser target="_blank" href={`https://github.com/${username}`}>
+          <User user={username} />
+        </AncorUser>
         <Moment moment={moment(created_datetime).fromNow()} />
       </div>
       <Text text={content} />

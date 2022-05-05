@@ -48,3 +48,8 @@ export const StyleModal = styled.div`
   top: 50%;
   transform: translate(-50%, -50%);
 `
+
+export const AncorUser = styled.a`
+  text-decoration: none;
+  cursor: pointer;
+`
