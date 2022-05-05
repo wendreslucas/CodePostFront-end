@@ -33,6 +33,7 @@ export const StylePosts = styled.div`
   }
 
   .Info {
+    align-items: center;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -52,4 +53,11 @@ export const StyleModal = styled.div`
 export const AncorUser = styled.a`
   text-decoration: none;
   cursor: pointer;
+`
+
+export const AvatarDiv = styled.div`
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
 `

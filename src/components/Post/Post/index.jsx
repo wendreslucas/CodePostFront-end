@@ -1,13 +1,14 @@
 import React, { useContext } from 'react'
 import { PostContext } from '../../../context/PostContext'
 import HeaderPost from '../../Headers/HeaderPost'
-import { StylePosts, AncorUser } from './style.js'
+import { StylePosts, AncorUser, AvatarDiv } from './style.js'
 import User from '../../Text/User'
 import Moment from '../../Text/Moment'
 import Text from '../../Text/TextContent'
 import moment from 'moment'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import ModeEditOutlineRoundedIcon from '@mui/icons-material/ModeEditOutlineRounded'
+import Avatar from '@mui/material/Avatar'
 
 const pointer = {
   cursor: 'pointer',
@@ -32,9 +33,16 @@ function Post({ id, title, content, username, created_datetime }) {
         </div>
       </div>
       <div className="Info">
-        <AncorUser target="_blank" href={`https://github.com/${username}`}>
-          <User user={username} />
-        </AncorUser>
+        <AvatarDiv>
+          <Avatar
+            alt="autor do post"
+            src={`https://github.com/${username}.png`}
+          />
+          <AncorUser target="_blank" href={`https://github.com/${username}`}>
+            <User user={username} />
+          </AncorUser>
+        </AvatarDiv>
+
         <Moment moment={moment(created_datetime).fromNow()} />
       </div>
       <Text text={content} />
