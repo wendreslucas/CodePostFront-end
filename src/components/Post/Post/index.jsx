@@ -35,10 +35,7 @@ function Post({ id, title, content, username, created_datetime }) {
       <div className="Info">
         <AvatarDiv>
           <AncorAvatar target="_blank" href={`https://github.com/${username}`}>
-            <Avatar
-              alt="autor do post"
-              src={`https://github.com/${username}.png`}
-            />
+            <Avatar alt={username} src={`https://github.com/${username}.png`} />
           </AncorAvatar>
           <AncorUser target="_blank" href={`https://github.com/${username}`}>
             <User user={username} />
