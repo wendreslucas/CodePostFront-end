@@ -55,6 +55,11 @@ export const AncorUser = styled.a`
   cursor: pointer;
 `
 
+export const AncorAvatar = styled.a`
+  text-decoration: none;
+  cursor: pointer;
+`
+
 export const AvatarDiv = styled.div`
   align-items: center;
   display: flex;

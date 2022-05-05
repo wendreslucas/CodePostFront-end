@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { PostContext } from '../../../context/PostContext'
 import HeaderPost from '../../Headers/HeaderPost'
-import { StylePosts, AncorUser, AvatarDiv } from './style.js'
+import { StylePosts, AncorUser, AncorAvatar, AvatarDiv } from './style.js'
 import User from '../../Text/User'
 import Moment from '../../Text/Moment'
 import Text from '../../Text/TextContent'
@@ -34,10 +34,12 @@ function Post({ id, title, content, username, created_datetime }) {
       </div>
       <div className="Info">
         <AvatarDiv>
-          <Avatar
-            alt="autor do post"
-            src={`https://github.com/${username}.png`}
-          />
+          <AncorAvatar target="_blank" href={`https://github.com/${username}`}>
+            <Avatar
+              alt="autor do post"
+              src={`https://github.com/${username}.png`}
+            />
+          </AncorAvatar>
           <AncorUser target="_blank" href={`https://github.com/${username}`}>
             <User user={username} />
           </AncorUser>
