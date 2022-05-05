@@ -35,6 +35,10 @@ export function SettingContextProvider({ children }) {
     window.open(`https://github.com/${userName}`, '_blank')
   }
 
+  function handleAbout() {
+    window.open('https://github.com/wendreslucas', '_blank')
+  }
+
   return (
     <SettingContext.Provider
       value={{
@@ -42,7 +46,8 @@ export function SettingContextProvider({ children }) {
         handlePosts,
         handleHome,
         handleLogout,
-        handleProfile
+        handleProfile,
+        handleAbout
       }}
     >
       {children}

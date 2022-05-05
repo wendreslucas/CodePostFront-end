@@ -45,7 +45,8 @@ const Header = () => {
     handlePosts,
     handleHome,
     handleLogout,
-    handleProfile
+    handleProfile,
+    handleAbout
   } = useContext(SettingContext)
 
   const [anchorElNav, setAnchorElNav] = React.useState(null)
@@ -193,6 +194,9 @@ const Header = () => {
 
               <MenuItem className={classes.diplayMenu} onClick={handleLogout}>
                 <Typography textAlign="center">Logout</Typography>
+              </MenuItem>
+              <MenuItem className={classes.diplayMenu} onClick={handleAbout}>
+                <Typography textAlign="center">About</Typography>
               </MenuItem>
             </Menu>
           </Box>
