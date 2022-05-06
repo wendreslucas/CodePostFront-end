@@ -16,7 +16,7 @@ const FormLogin = () => {
   function handleLogin(e) {
     e.preventDefault()
     if (!name || name < 3 || name > 20) {
-      alert('Preencha o campo com um nome válido')
+      alert('Please enter a valid github nickname')
     } else {
       setUserName(name)
       navigate('/home')
