@@ -8,9 +8,9 @@ import Moment from '../../Text/Moment'
 import Text from '../../Text/TextContent'
 import moment from 'moment'
 import Delete from '../../Icons/Delete'
+import Edit from '../../Icons/Edit'
 import { useAxios } from '../../../hooks/useAxios'
-// import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
-import ModeEditOutlineRoundedIcon from '@mui/icons-material/ModeEditOutlineRounded'
+
 import Avatar from '@mui/material/Avatar'
 
 const pointer = {
@@ -21,7 +21,6 @@ const pointer = {
 function Post({ id, title, content, username, created_datetime }) {
   const { handleEdit, handleDelete } = useContext(PostContext)
   const { userName } = useContext(UserContext)
-  const { data } = useAxios('posts')
 
   return (
     <StylePosts key={id}>
@@ -32,8 +31,8 @@ function Post({ id, title, content, username, created_datetime }) {
             disabled={userName != username}
             onClick={() => handleDelete(id)}
           />
-          <ModeEditOutlineRoundedIcon
-            sx={pointer}
+          <Edit
+            disabled={userName != username}
             onClick={() => {
               handleEdit(id, title, content)
             }}

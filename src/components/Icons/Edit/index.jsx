@@ -1,11 +1,12 @@
 import React from 'react'
-import { StyleEdit } from './style'
+import { Button } from './style'
 
-const Edit = () => {
+function Edit(props) {
+  const { disabled, onClick } = props
   return (
-    <StyleEdit>
+    <Button disabled={disabled} onClick={onClick}>
       <img src="/edit.svg" alt="edit" />
-    </StyleEdit>
+    </Button>
   )
 }
 

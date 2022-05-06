@@ -1,6 +1,11 @@
 import styled from 'styled-components'
 
-export const StyleEdit = styled.button`
+export const Button = styled.button`
+  border: none;
+  background-color: transparent;
   cursor: pointer;
-  margin: none;
+
+  img {
+    visibility: ${props => (props.disabled ? 'hidden' : 'visible')};
+  }
 `
