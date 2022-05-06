@@ -191,12 +191,12 @@ const Header = () => {
               <MenuItem className={classes.diplayMenu} onClick={handleProfile}>
                 <Typography textAlign="center">Profile</Typography>
               </MenuItem>
+              <MenuItem className={classes.diplayMenu} onClick={handleAbout}>
+                <Typography textAlign="center">About</Typography>
+              </MenuItem>
 
               <MenuItem className={classes.diplayMenu} onClick={handleLogout}>
                 <Typography textAlign="center">Logout</Typography>
-              </MenuItem>
-              <MenuItem className={classes.diplayMenu} onClick={handleAbout}>
-                <Typography textAlign="center">About</Typography>
               </MenuItem>
             </Menu>
           </Box>

@@ -13,22 +13,24 @@ const FormLogin = () => {
   const [name, setName] = useState()
   const [open, setOpen] = React.useState(true)
 
-  const handleClose = () => setOpen(false)
+  function handleLogin(e) {
+    e.preventDefault()
+    if (!name || name < 3 || name > 20) {
+      alert('Preencha o campo com um nome válido')
+    } else {
+      setUserName(name)
+      navigate('/home')
+    }
+  }
 
   return (
     <Container>
-      <StyleForm
-        onSubmit={e => {
-          e.preventDefault()
-          setUserName(name)
-          navigate('/home')
-        }}
-      >
+      <StyleForm onSubmit={handleLogin}>
         <Subtitle subtitle="Welcome to CodePost network!" />
         <Label margin="13px" label="Please enter your github nickname" />
         <Input
           autoFocus
-          placeholder="Username"
+          placeholder="nick github"
           type="text"
           onChange={e => setName(e.target.value)}
           size="444px"

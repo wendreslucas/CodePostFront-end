@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { PostContext } from '../../../context/PostContext'
+
 import HeaderPost from '../../Headers/HeaderPost'
 import { StylePosts, AncorUser, AncorAvatar, AvatarDiv } from './style.js'
 import User from '../../Text/User'
