@@ -1,11 +1,12 @@
 import React from 'react'
-import { StyleDelete } from './style'
+import { Button } from './style'
 
-const Delete = () => {
+function Delete(props) {
+  const { disabled, onClick } = props
   return (
-    <StyleDelete>
+    <Button disabled={disabled} onClick={onClick}>
       <img src="/delete.svg" alt="delete" />
-    </StyleDelete>
+    </Button>
   )
 }
 

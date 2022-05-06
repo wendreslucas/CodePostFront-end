@@ -1,13 +1,15 @@
 import React, { useContext } from 'react'
 import { PostContext } from '../../../context/PostContext'
-
+import { UserContext } from '../../../context/UserContext'
 import HeaderPost from '../../Headers/HeaderPost'
 import { StylePosts, AncorUser, AncorAvatar, AvatarDiv } from './style.js'
 import User from '../../Text/User'
 import Moment from '../../Text/Moment'
 import Text from '../../Text/TextContent'
 import moment from 'moment'
-import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
+import Delete from '../../Icons/Delete'
+import { useAxios } from '../../../hooks/useAxios'
+// import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import ModeEditOutlineRoundedIcon from '@mui/icons-material/ModeEditOutlineRounded'
 import Avatar from '@mui/material/Avatar'
 
@@ -18,13 +20,18 @@ const pointer = {
 
 function Post({ id, title, content, username, created_datetime }) {
   const { handleEdit, handleDelete } = useContext(PostContext)
+  const { userName } = useContext(UserContext)
+  const { data } = useAxios('posts')
 
   return (
     <StylePosts key={id}>
       <div className="DivHeader" key={id}>
         <HeaderPost size=" 723px" title={title} />
         <div className="BackImagem">
-          <DeleteForeverIcon sx={pointer} onClick={() => handleDelete(id)} />
+          <Delete
+            disabled={userName != username}
+            onClick={() => handleDelete(id)}
+          />
           <ModeEditOutlineRoundedIcon
             sx={pointer}
             onClick={() => {

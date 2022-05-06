@@ -11,7 +11,6 @@ const FormLogin = () => {
   const navigate = useNavigate()
   const { userName, setUserName } = React.useContext(UserContext)
   const [name, setName] = useState()
-  const [open, setOpen] = React.useState(true)
 
   function handleLogin(e) {
     e.preventDefault()
@@ -30,7 +29,7 @@ const FormLogin = () => {
         <Label margin="13px" label="Please enter your github nickname" />
         <Input
           autoFocus
-          placeholder="nick github"
+          placeholder=" Github nickname"
           type="text"
           onChange={e => setName(e.target.value)}
           size="444px"

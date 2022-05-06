@@ -2,6 +2,7 @@ import { createContext, useState, useContext } from 'react'
 import { UserContext } from './UserContext'
 import ModalEdit from '../components/Modal/ModalEdit'
 import ModalDelete from '../components/Modal/ModalDelete'
+import Delete from '../components/Icons/Delete'
 import { useAxios } from '../hooks/useAxios'
 import api from '../services/api'
 import { useNavigate } from 'react-router-dom'
@@ -11,12 +12,9 @@ export const PostContext = createContext()
 export function PostContextProvider({ children }) {
   const navigate = useNavigate()
   const { data, mutate } = useAxios('posts')
-
   const { userName, setUserName } = useContext(UserContext)
-
   const [openModalEdit, setOpenModalEdit] = useState(false)
   const [openModalDelete, setOpenModalDelete] = useState(false)
-
   const [title, setTitle] = useState('')
   const [content, setContent] = useState('')
   const [id, setId] = useState(false)
@@ -64,27 +62,19 @@ export function PostContextProvider({ children }) {
   }
 
   function handleDelete(id) {
-    if (userName != 'wendreslucas') {
-      alert('You are not authorized to delete this post')
-    } else {
-      api.delete(`posts/${id}`)
-      const updatedPosts = {
-        posts: data.posts?.filter(post => post._id !== id)
-      }
-      navigate('/posts')
-      mutate(updatedPosts, false)
+    api.delete(`posts/${id}`)
+    const updatedPosts = {
+      posts: data.posts?.filter(post => post._id !== id)
     }
+    navigate('/posts')
+    mutate(updatedPosts, false)
   }
 
   function handleEdit(postId, postTitle, postContent) {
-    if (userName != 'wendreslucas') {
-      alert('You are not authorized to edit this post')
-    } else {
-      setOpenModalEdit(true)
-      setTitle(postTitle)
-      setContent(postContent)
-      setId(postId)
-    }
+    setOpenModalEdit(true)
+    setTitle(postTitle)
+    setContent(postContent)
+    setId(postId)
   }
 
   function OpenDelete() {
@@ -122,7 +112,6 @@ export function PostContextProvider({ children }) {
         handleEdit,
         handleSubmit,
         handleDelete,
-
         OpenDelete,
         CloseDelete,
         title,
@@ -134,6 +123,7 @@ export function PostContextProvider({ children }) {
       }}
     >
       {children}
+
       {openModalEdit && <ModalEdit />}
       {openModalDelete && <ModalDelete />}
     </PostContext.Provider>
