@@ -1,11 +1,12 @@
 import React, { useContext } from 'react'
-import { StyleFormCreate } from './style.js'
-import Input from '../Inputs/Input'
-import TextArea from '../Inputs/InputContent'
+import { StyleFormCreate, useStyles } from './style.js'
 import Subtitle from '../Text/Subtitle'
-import Label from '../Text/Label'
-import Button from '../Buttons/Button'
+
 import Snackbar from '@mui/material/Snackbar'
+import TextField from '@mui/material/TextField'
+
+import Stack from '@mui/material/Stack'
+import Button from '@mui/material/Button'
 
 import Slide from '@mui/material/Slide'
 import { PostContext } from '../../context/PostContext'
@@ -14,7 +15,8 @@ function TransitionDown(props) {
   return <Slide {...props} direction="down" />
 }
 
-function AddPost() {
+function AddPostMaterial() {
+  const classes = useStyles()
   const { title, content, handleTitle, handleContent, handleSubmit } =
     useContext(PostContext)
 
@@ -33,36 +35,40 @@ function AddPost() {
     <>
       <StyleFormCreate onSubmit={handleSubmit}>
         <Subtitle subtitle="What’s on your mind?" />
-        <Label bottom="10px" label="Title" />
-        <Input
+        <TextField
           autoFocus
-          name="title"
-          value={title}
-          type="text"
+          className={classes.widthInput}
+          label="Title"
+          margin="normal"
           onChange={handleTitle}
-          placeholder="Title Here"
-          size="559px"
+          size="small"
+          type="text"
+          value={title}
         />
 
-        <Label bottom="10px" label="Content" />
-        <TextArea
-          max={50000}
-          name="content"
+        <TextField
+          className={classes.widthInput}
+          label="Content"
+          margin="normal"
+          maxRows={5}
+          multiline
           onChange={handleContent}
-          placeholder="Content Here"
-          size="559px"
+          size="small"
           type="text"
           value={content}
         />
-
-        <Button
-          disabled={!title || !content}
-          margin="474px"
-          onClick={handleClick(TransitionDown)}
-          size="111px"
-          text="CREATE"
-          type="submit"
-        />
+        <Stack spacing={2} direction="row" className={classes.margin}>
+          <Button
+            className={classes.StyleButton}
+            color="primary"
+            disabled={!title || !content}
+            onClick={handleClick(TransitionDown)}
+            type="submit"
+            variant="contained"
+          >
+            CREATE
+          </Button>
+        </Stack>
       </StyleFormCreate>
       <Snackbar
         open={open}
@@ -76,4 +82,4 @@ function AddPost() {
   )
 }
 
-export default AddPost
+export default AddPostMaterial

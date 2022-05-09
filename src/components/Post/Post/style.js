@@ -64,5 +64,5 @@ export const AvatarDiv = styled.div`
   align-items: center;
   display: flex;
   flex-direction: row;
-  padding: 20px;
+  padding: 0 20px 20px 20px;
 `

@@ -25,7 +25,7 @@ function Post({ id, title, content, username, created_datetime }) {
   return (
     <StylePosts key={id}>
       <div className="DivHeader" key={id}>
-        <HeaderPost size=" 723px" title={title} />
+        <HeaderPost title={title} />
         <div className="BackImagem">
           <Delete
             disabled={userName != username}

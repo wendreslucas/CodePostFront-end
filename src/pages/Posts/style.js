@@ -18,7 +18,20 @@ export const StylePosts = styled.main`
   margin-top: 40px;
   width: auto;
 
+  .DivHeader {
+    background-color: #0d0c0c;
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    justify-content: space-between;
+    margin-bottom: 25px;
+  }
+
   ${media.mobile} {
     width: 80%;
+
+    .DivHeader {
+      width: 100%;
+    }
   }
 `

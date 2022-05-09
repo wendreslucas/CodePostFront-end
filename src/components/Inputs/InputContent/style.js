@@ -9,7 +9,7 @@ export const StyleTextArea = styled.textarea`
   margin-left: 25px;
   padding: 6px 0 6px 11px;
   resize: none;
-  width: 659px;
+  width: ${props => props.size};
   height: 74px;
 
   ${media.mobile} {

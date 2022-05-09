@@ -4,7 +4,6 @@ import HeaderPost from '../../components/Headers/HeaderPost'
 import AddPost from '../../components/AddPost'
 import Footer from '../../components/Footer'
 import { StyleMain } from './style'
-import PostList from '../../components/Post/PostList'
 
 const Main = () => {
   useEffect(() => {
@@ -16,10 +15,9 @@ const Main = () => {
       <StyleMain>
         <div className="DivMain">
           <div className="DivHeader">
-            <HeaderPost margin="44px" size="823px" title="Postcode Network" />
+            <HeaderPost size="723px" title="Postcode Network" />
           </div>
           <AddPost />
-          {/* <PostList /> */}
         </div>
       </StyleMain>
       <Footer />

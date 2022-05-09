@@ -3,7 +3,8 @@ import media from '../../Ui/Media'
 
 export const StyleHeader = styled.div`
   align-items: center;
-  background-color: #0d0c0c;
+  /* background-color: #0d0c0c; */
+  border-radius: 4px;
   color: white;
   display: flex;
   font-size: 22px;

@@ -5,9 +5,6 @@ import { GlobalStyle } from './components/Ui/GlobalStyle'
 import { PostContextProvider } from './context/PostContext'
 import { BrowserRouter } from 'react-router-dom'
 import { SettingContextProvider } from './context/SettingContext'
-import { ThemeProvider } from 'styled-components'
-import Switcher from './utils/Switcher'
-import { temaClaro, temaEscuro } from './utils/Tema'
 import { PagesRoot } from './pages/Root'
 
 function App() {
@@ -16,10 +13,8 @@ function App() {
       <UserContextProvider>
         <SettingContextProvider>
           <PostContextProvider>
-            {/* <ThemeProvider theme={tema ? temaClaro : temaEscuro}> */}
             <GlobalStyle />
             <PagesRoot />
-            {/* </ThemeProvider> */}
           </PostContextProvider>
         </SettingContextProvider>
       </UserContextProvider>
