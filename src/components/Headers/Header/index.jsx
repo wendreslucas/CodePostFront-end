@@ -80,7 +80,7 @@ const Header = () => {
             <Ancor>
               <img
                 src="/postcode_logo_white.svg"
-                alt="CodeLeap Logo"
+                alt="PostCode Logo"
                 width="90"
                 height="30"
               />
@@ -136,7 +136,7 @@ const Header = () => {
             <Ancor>
               <img
                 src="/postcode_logo_white.svg"
-                alt="CodeLeap Logo"
+                alt="Postcode Logo"
                 width="80"
                 height="30"
               />

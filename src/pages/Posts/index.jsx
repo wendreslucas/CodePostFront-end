@@ -15,7 +15,7 @@ const Posts = () => {
       <Header />
       <StyleDiv>
         <StylePosts>
-          <HeaderPost margin="44px" size="823px" title="CodePosts" />
+          <HeaderPost margin="44px" size="823px" title="Postcodes" />
           <PostList />
         </StylePosts>
       </StyleDiv>

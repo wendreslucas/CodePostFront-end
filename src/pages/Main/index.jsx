@@ -16,7 +16,7 @@ const Main = () => {
       <StyleMain>
         <div className="DivMain">
           <div className="DivHeader">
-            <HeaderPost margin="44px" size="823px" title="CodeLeap Network" />
+            <HeaderPost margin="44px" size="823px" title="Postcode Network" />
           </div>
           <AddPost />
           {/* <PostList /> */}
