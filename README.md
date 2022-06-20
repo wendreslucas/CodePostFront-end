@@ -26,10 +26,14 @@ npm i
 Then you have to create a file with the name '.env' at the root folder of the project.
 Inside this file you have to create a variable with named REACT_APP_API_URL.
 
-## Application on Vercel:
+## About the author
 
-https://code-post-front-end.vercel.app/
-
-## Follow me:
+The entire app was made by me.
 
 [Instagram](https://www.instagram.com/wendreslucas/)
+
+[LinkedIn](https://www.linkedin.com/in/wendres-lucas)
+
+## Demo
+
+[Postcode](https://code-post-front-end.vercel.app/)
