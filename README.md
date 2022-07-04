@@ -21,6 +21,10 @@ First you have to install all the dependencies:
 npm i
 ```
 
+yarn
+
+```
+
 ## Environment variable
 
 Then you have to create a file with the name '.env' at the root folder of the project.
@@ -37,3 +41,4 @@ The entire app was made by me.
 ## Demo
 
 [Postcode](https://code-post-front-end.vercel.app/)
+```
