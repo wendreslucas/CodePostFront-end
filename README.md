@@ -34,14 +34,10 @@ Inside this file you have to create a variable with named REACT_APP_API_URL.
 
 The entire app was made by me.
 
-```
 [Instagram](https://www.instagram.com/wendreslucas/)
 
 [LinkedIn](https://www.linkedin.com/in/wendres-lucas)
-```
 
 ## Demo
 
-```
 [Postcode](https://code-post-front-end.vercel.app/)
-```
