@@ -21,8 +21,8 @@ First you have to install all the dependencies:
 npm i
 ```
 
+```
 yarn
-
 ```
 
 ## Environment variable
@@ -41,4 +41,7 @@ The entire app was made by me.
 ## Demo
 
 [Postcode](https://code-post-front-end.vercel.app/)
+
+```
+
 ```
